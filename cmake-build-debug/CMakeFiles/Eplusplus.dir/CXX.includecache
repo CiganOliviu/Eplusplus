@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+../PreprocessorDirectives/StandardLibrary.h
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/StandardLibrary.h
+../PreprocessorDirectives/DefinedDirectives.h
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
+
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/IOSystemsOneDimensionalArray.h
+../PreprocessorDirectives/StandardLibrary.h
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/StandardLibrary.h
+../PreprocessorDirectives/DefinedDirectives.h
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
+../DataStructures/OneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
+
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/StandardLibrary.h
+assert.h
+-
+fstream
+-
+iostream
+-
+stdexcept
+-
+stdlib.h
+-
+
+/media/cigan/Personal/Projects/Eplusplus/main.cpp
+DataStructures/OneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+EppSourceCode/IOSystemsOneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/IOSystemsOneDimensionalArray.h
+
