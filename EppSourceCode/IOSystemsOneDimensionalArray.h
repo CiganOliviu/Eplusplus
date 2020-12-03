@@ -14,13 +14,15 @@ template <class Type> class AbstractIOSystemsOneDimensionalArrayObject {
 public:
     AbstractIOSystemsOneDimensionalArrayObject() = default;
 
-    virtual OneDimensionalArrayType<Type> ReadOneDimensionalArray(unsigned int length) {}
-    virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFileWithGivenLength(char * fileName) {}
+    [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArray(unsigned int length) {}
+    [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFileWithGivenLength(char * fileName) {}
+    [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFile(char * fileName) {}
 
-    virtual void OutputOneDimensionalArray(OneDimensionalArrayType<Type> Array) {}
-    virtual void OutputOneDimensionalArrayWithLength(OneDimensionalArrayType<Type> Array) {}
-    virtual void OutputOneDimensionalArrayInFileWithLength(OneDimensionalArrayType<Type> Array, char * fileName) {}
-    virtual void OutputOneDimensionalArrayInFile(OneDimensionalArrayType<Type> Array, char * fileName) {}
+    [[maybe_unused]] virtual void OutputOneDimensionalArray(OneDimensionalArrayType<Type> Array) {}
+    [[maybe_unused]] virtual void OutputOneDimensionalArrayWithLength(OneDimensionalArrayType<Type> Array) {}
+    [[maybe_unused]] virtual void OutputOneDimensionalArrayInFileWithLength(OneDimensionalArrayType<Type> Array, char * fileName) {}
+
+    [[maybe_unused]] virtual void OutputOneDimensionalArrayInFile(OneDimensionalArrayType<Type> Array, char * fileName) {}
 
     ~AbstractIOSystemsOneDimensionalArrayObject() = default;
 };
@@ -36,40 +38,66 @@ private:
 
         Array.SetLengthOfOneDimensionalArray(length);
 
-        for (int iterator = 0; iterator < length; ++iterator)
+        for (unsigned int iterator = 0; iterator < length; ++iterator)
             std::cin >> Array.GetOneDimensionalArray()[iterator];
 
         return Array;
     }
 
-    OneDimensionalArrayType<Type> GetArrayFromStdFileIn(std::ifstream &File, unsigned int length) {
+    OneDimensionalArrayType<Type> GetArrayWithGivenLengthFromStdFileIn(std::ifstream &File, unsigned int length) {
 
         OneDimensionalArrayType<Type> Array;
         Array.SetLengthOfOneDimensionalArray(length);
 
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        for (unsigned int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
             File >> Array.GetOneDimensionalArray()[iterator];
+
+        return Array;
+    }
+
+    OneDimensionalArrayType<Type> GetArrayFromStdFileIn(std::ifstream &File) {
+
+        OneDimensionalArrayType<Type> Array;
+        Type data;
+        unsigned int iterator = 0;
+
+        while (File >> data) {
+
+            Array.GetOneDimensionalArray()[iterator] = data;
+            iterator += 1;
+        }
+
+        Array.SetLengthOfOneDimensionalArray(iterator);
+
+        return Array;
     }
 
     void PutsArrayInStdout(OneDimensionalArrayType<Type> Array) {
 
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        for (unsigned int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
             std::cout << Array.GetOneDimensionalArray()[iterator] << " ";
     }
 
     void PutsArrayInStdFileOut(std::ofstream &File, OneDimensionalArrayType<Type> Array) {
 
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        for (unsigned int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
             File << Array.GetOneDimensionalArray()[iterator];
     }
 
-    void ValidateInputFile(std::ifstream &File) {
+    void CheckIfInputFileIsEmpty(std::ifstream &File) {
+
+        if (File.tellg() < 0)
+            throw std::out_of_range("Unable to read from empty file");
+
+    }
+
+    void CheckIfInputFileIsOpen(std::ifstream &File) {
 
         if (!File.is_open())
             throw std::runtime_error("Unable to open file");
     }
 
-    void ValidateOutputFile(std::ofstream &File) {
+    void CheckIfOutputFileIsOpen(std::ofstream &File) {
 
         if (!File.is_open())
             throw std::runtime_error("Unable to open file");
@@ -94,9 +122,7 @@ public:
 
         assert(length >= 0);
 
-        OneDimensionalArrayType<Type> Array;
-
-        Array = this->GetArrayFromStdin(length);
+        OneDimensionalArrayType<Type> Array = this->GetArrayFromStdin(length);
 
         return Array;
     }
@@ -105,19 +131,30 @@ public:
 
         std::ifstream WorkingFile(fileName, std::ios::in);
 
-        ValidateInputFile(WorkingFile);
+        CheckIfInputFileIsOpen(WorkingFile);
+        CheckIfInputFileIsEmpty(WorkingFile);
 
         int firstElementOfTheFile = ReadFirstElementFromFile(WorkingFile);
 
         assert(firstElementOfTheFile >= 0);
 
-        OneDimensionalArrayType<Type> Array;
-
-        Array = GetArrayFromStdFileIn(WorkingFile, firstElementOfTheFile);
+        OneDimensionalArrayType<Type> Array = GetArrayWithGivenLengthFromStdFileIn(WorkingFile, firstElementOfTheFile);
 
         WorkingFile.close();
 
         return Array;
+    }
+
+    virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFile(char * fileName) {
+
+        std::ifstream WorkingFile(fileName, std::ios::in);
+
+        CheckIfInputFileIsOpen(WorkingFile);
+        CheckIfInputFileIsEmpty(WorkingFile);
+
+        OneDimensionalArrayType<Type> Array = GetArrayFromStdFileIn(WorkingFile);
+
+        WorkingFile.close();
     }
 
     void OutputOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
@@ -142,7 +179,7 @@ public:
 
         std::ofstream WorkingFile(fileName, std::ios::out);
 
-        ValidateOutputFile(WorkingFile);
+        CheckIfOutputFileIsOpen(WorkingFile);
 
         WorkingFile << Array.GetLengthOfOneDimensionalArray() << '\n';
 
@@ -157,7 +194,7 @@ public:
 
         std::ofstream WorkingFile(fileName, std::ios::out);
 
-        ValidateOutputFile(WorkingFile);
+        CheckIfOutputFileIsOpen(WorkingFile);
 
         PutsArrayInStdFileOut(WorkingFile, Array);
 

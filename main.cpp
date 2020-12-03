@@ -3,16 +3,13 @@
 
 int main() {
 
-    AbstractOneDimensionalArrayObject<int> * AbstractArray;
-    OneDimensionalArrayType<int> Array;
+       AbstractOneDimensionalArrayObject<int> * AbstractArray;
+       OneDimensionalArrayType<int> Array;
 
-    AbstractArray = &Array;
+       AbstractArray = &Array;
 
-    AbstractIOSystemsOneDimensionalArrayObject<int> * AbstractIOSystem;
-    IOSystemsOneDimensionalArray<int> IOSystem;
-
-    Array = IOSystem.ReadOneDimensionalArray(5);
-    IOSystem.OutputOneDimensionalArray(Array);
+       AbstractIOSystemsOneDimensionalArrayObject<int> * AbstractIOSystem;
+       IOSystemsOneDimensionalArray<int> IOSystem;
 
     return 0;
 }
