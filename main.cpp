@@ -1,15 +1,10 @@
-#include "DataStructures/OneDimensionalArray.h"
-#include "EppSourceCode/IOSystemsOneDimensionalArray.h"
+#include "SystemTests/ObjectsTests.h"
 
 int main() {
 
-       AbstractOneDimensionalArrayObject<int> * AbstractArray;
-       OneDimensionalArrayType<int> Array;
+    TestsOneDimensionalArrayObject<int> ODAObject;
 
-       AbstractArray = &Array;
-
-       AbstractIOSystemsOneDimensionalArrayObject<int> * AbstractIOSystem;
-       IOSystemsOneDimensionalArray<int> IOSystem;
+    ODAObject.TestSet_Get_Length();
 
     return 0;
 }
