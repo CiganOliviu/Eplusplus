@@ -14,7 +14,9 @@ template <class Type> class AbstractTestsSupportObject {
 public:
     AbstractTestsSupportObject() = default;
 
-    virtual void AssertOneDimensionalArrays(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) {};
+    virtual void AssertOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) {};
+    virtual void AssertOneDimensionalArrayObjectWithPrimitive(OneDimensionalArrayType<Type> ArrayObject, int PrimitiveArray[]) {};
+    virtual void AssertTwoFloatingNumbers(float numberOne, float numberTwo) {};
 
     ~AbstractTestsSupportObject() = default;
 };
@@ -27,10 +29,10 @@ private:
 public:
     TestsSupport() {
 
-        Array = OneDimensionalArrayFactoryObject<Type>::GetOneDimensionalArrayTypeObject();
+        Array = OneDimensionalArrayTypeFactoryObject<Type>::GetOneDimensionalArrayTypeObject();
     }
 
-    void AssertOneDimensionalArrays(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override {
+    void AssertOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override {
 
         assert(FirstArray.GetOneDimensionalArray() > 0);
         assert(SecondArray.GetOneDimensionalArray() > 0);
@@ -40,6 +42,19 @@ public:
 
         for (int iterator = 0; iterator < CommonLength; ++iterator)
             assert(FirstArray.GetOneDimensionalArray()[iterator] == SecondArray.GetOneDimensionalArray()[iterator]);
+    }
+
+    void AssertOneDimensionalArrayObjectWithPrimitive(OneDimensionalArrayType<Type> ArrayObject, int PrimitiveArray[]) override {
+
+        assert(ArrayObject.GetLengthOfOneDimensionalArray() > 0);
+
+        for (int iterator = 0; iterator < ArrayObject.GetLengthOfOneDimensionalArray(); ++iterator)
+            assert(ArrayObject.GetOneDimensionalArray()[iterator] == PrimitiveArray[iterator]);
+    }
+
+    void AssertTwoFloatingNumbers(float numberOne, float numberTwo) override {
+
+        assert(abs(numberOne - numberTwo) < 1e-9);
     }
 
     ~TestsSupport() = default;

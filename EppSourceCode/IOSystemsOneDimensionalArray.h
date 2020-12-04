@@ -5,8 +5,6 @@
 #ifndef EPLUSPLUS_IOSYSTEMONEDIMENSIONALARRAY_H
 #define EPLUSPLUS_IOSYSTEMONEDIMENSIONALARRAY_H
 
-#include "../PreprocessorDirectives/StandardLibrary.h"
-#include "../PreprocessorDirectives/DefinedDirectives.h"
 #include "../DataStructures/OneDimensionalArray.h"
 
 template <class Type> class AbstractIOSystemsOneDimensionalArrayObject {
@@ -15,14 +13,14 @@ public:
     AbstractIOSystemsOneDimensionalArrayObject() = default;
 
     [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArray(unsigned int length) {}
-    [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFileWithGivenLength(char * fileName) {}
-    [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFile(char * fileName) {}
+    [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFileWithGivenLength(const char * fileName) {}
+    [[maybe_unused]] virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFile(const char * fileName) {}
 
     [[maybe_unused]] virtual void OutputOneDimensionalArray(OneDimensionalArrayType<Type> Array) {}
     [[maybe_unused]] virtual void OutputOneDimensionalArrayWithLength(OneDimensionalArrayType<Type> Array) {}
-    [[maybe_unused]] virtual void OutputOneDimensionalArrayInFileWithLength(OneDimensionalArrayType<Type> Array, char * fileName) {}
+    [[maybe_unused]] virtual void OutputOneDimensionalArrayInFileWithLength(OneDimensionalArrayType<Type> Array, const char * fileName) {}
 
-    [[maybe_unused]] virtual void OutputOneDimensionalArrayInFile(OneDimensionalArrayType<Type> Array, char * fileName) {}
+    [[maybe_unused]] virtual void OutputOneDimensionalArrayInFile(OneDimensionalArrayType<Type> Array, const char * fileName) {}
 
     ~AbstractIOSystemsOneDimensionalArrayObject() = default;
 };
@@ -30,8 +28,6 @@ public:
 template <class Type> class IOSystemsOneDimensionalArray : public AbstractIOSystemsOneDimensionalArrayObject<Type> {
 
 private:
-    AbstractOneDimensionalArrayObject<Type> OneDimensionalArray;
-
     OneDimensionalArrayType<Type> GetArrayFromStdin(unsigned int length) {
 
         OneDimensionalArrayType<Type> Array;
@@ -81,7 +77,7 @@ private:
     void PutsArrayInStdFileOut(std::ofstream &File, OneDimensionalArrayType<Type> Array) {
 
         for (unsigned int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            File << Array.GetOneDimensionalArray()[iterator];
+            File << Array.GetOneDimensionalArray()[iterator] << " ";
     }
 
     void CheckIfInputFileIsEmpty(std::ifstream &File) {
@@ -113,10 +109,7 @@ private:
     }
 
 public:
-    IOSystemsOneDimensionalArray() {
-
-        OneDimensionalArray = OneDimensionalArrayFactoryObject<Type>::GetOneDimensionalArrayTypeObject();
-    }
+    IOSystemsOneDimensionalArray() = default;
 
     OneDimensionalArrayType<Type> ReadOneDimensionalArray(unsigned int length) override {
 
@@ -127,7 +120,7 @@ public:
         return Array;
     }
 
-    OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFileWithGivenLength(char * fileName) override {
+    OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFileWithGivenLength(const char * fileName) override {
 
         std::ifstream WorkingFile(fileName, std::ios::in);
 
@@ -145,7 +138,7 @@ public:
         return Array;
     }
 
-    virtual OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFile(char * fileName) {
+    OneDimensionalArrayType<Type> ReadOneDimensionalArrayFromFile(const char * fileName) override {
 
         std::ifstream WorkingFile(fileName, std::ios::in);
 
@@ -155,6 +148,8 @@ public:
         OneDimensionalArrayType<Type> Array = GetArrayFromStdFileIn(WorkingFile);
 
         WorkingFile.close();
+
+        return Array;
     }
 
     void OutputOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
@@ -173,7 +168,7 @@ public:
         PutsArrayInStdout(Array);
     }
 
-    void OutputOneDimensionalArrayInFileWithLength(OneDimensionalArrayType<Type> Array, char * fileName) override {
+    void OutputOneDimensionalArrayInFileWithLength(OneDimensionalArrayType<Type> Array, const char * fileName) override {
 
         assert(Array.GetOneDimensionalArray() >= 0);
 
@@ -188,7 +183,7 @@ public:
         WorkingFile.close();
     }
 
-     void OutputOneDimensionalArrayInFile(OneDimensionalArrayType<Type> Array, char * fileName) override {
+     void OutputOneDimensionalArrayInFile(OneDimensionalArrayType<Type> Array, const char * fileName) override {
 
         assert(Array.GetOneDimensionalArray() >= 0);
 

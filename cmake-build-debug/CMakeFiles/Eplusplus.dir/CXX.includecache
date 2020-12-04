@@ -13,10 +13,10 @@
 /media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
 
 /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/IOSystemsOneDimensionalArray.h
-../PreprocessorDirectives/StandardLibrary.h
-/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/StandardLibrary.h
-../PreprocessorDirectives/DefinedDirectives.h
-/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
+../DataStructures/OneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArrayWorkFlow.h
 ../DataStructures/OneDimensionalArray.h
 /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
 
@@ -34,9 +34,37 @@ stdexcept
 stdlib.h
 -
 
-/media/cigan/Personal/Projects/Eplusplus/main.cpp
-DataStructures/OneDimensionalArray.h
-/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
-EppSourceCode/IOSystemsOneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/IOSystemsTests.h
+../EppSourceCode/IOSystemsOneDimensionalArray.h
 /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/IOSystemsOneDimensionalArray.h
+TestsSupport.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/TestsSupport.h
+
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/ObjectsTests.h
+../DataStructures/OneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+TestsSupport.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/TestsSupport.h
+
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArrayWorkFlowTests.h
+../EppSourceCode/OneDimensionalArrayWorkFlow.h
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArrayWorkFlow.h
+TestsSupport.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/TestsSupport.h
+
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/TestsSupport.h
+../PreprocessorDirectives/StandardLibrary.h
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/StandardLibrary.h
+../PreprocessorDirectives/DefinedDirectives.h
+/media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
+../DataStructures/OneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+
+/media/cigan/Personal/Projects/Eplusplus/main.cpp
+SystemTests/ObjectsTests.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/ObjectsTests.h
+SystemTests/IOSystemsTests.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/IOSystemsTests.h
+SystemTests/OneDimensionalArrayWorkFlowTests.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArrayWorkFlowTests.h
 

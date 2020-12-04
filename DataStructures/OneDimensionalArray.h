@@ -17,7 +17,7 @@ public:
     virtual void SetLengthOfOneDimensionalArray(unsigned int length) {}
 
     virtual Type * GetOneDimensionalArray() {}
-    virtual void SetValueForOneDimensionalArray(Type * Array) {}
+    virtual void SetOneDimensionalArray(Type * Array) {}
 
     ~AbstractOneDimensionalArrayObject() = default;
 };
@@ -46,7 +46,7 @@ public:
         return this->OneDimensionalArray;
     }
 
-    void SetValueForOneDimensionalArray(Type * Array) {
+    void SetOneDimensionalArray(Type * Array) {
 
         this->OneDimensionalArray = Array;
     }
@@ -54,17 +54,17 @@ public:
     ~OneDimensionalArrayType() = default;
 };
 
-template <class Type> class OneDimensionalArrayFactoryObject {
+template <class Type> class OneDimensionalArrayTypeFactoryObject {
 
 public:
-    OneDimensionalArrayFactoryObject() = default;
+    OneDimensionalArrayTypeFactoryObject() = default;
 
     static AbstractOneDimensionalArrayObject<Type> GetOneDimensionalArrayTypeObject() {
 
         return OneDimensionalArrayType<Type>();
     }
 
-    ~OneDimensionalArrayFactoryObject() = default;
+    ~OneDimensionalArrayTypeFactoryObject() = default;
 };
 
 #endif //EPLUSPLUS_ONEDIMENSIONALARRAY_H

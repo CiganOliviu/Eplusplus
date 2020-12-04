@@ -13,4 +13,8 @@
 #define NEWLINE() std::cout << std::endl;
 #endif
 
+#ifndef LOG_BUG
+#define LOG_BUG(parameter) std::cerr << parameter << std::endl;
+#endif
+
 #endif //EPLUSPLUS_DEFINEDDIRECTIVES_H
