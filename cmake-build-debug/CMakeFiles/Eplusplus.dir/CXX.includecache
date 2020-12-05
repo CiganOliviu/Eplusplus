@@ -29,6 +29,8 @@ fstream
 -
 iostream
 -
+memory
+-
 stdexcept
 -
 stdlib.h
