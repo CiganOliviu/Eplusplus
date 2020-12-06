@@ -296,16 +296,245 @@ private:
         this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
     }
 
-    AbstractOneDimensionalArrayWorkFlowObject<Type> * ArrayWorkFlow;
-    OneDimensionalArrayWorkFlow<Type> ArraysWorkflow;
-    AbstractTestsSupportObject<Type> * Tests;
-    TestsSupport<Type> TestsWorkFlow;
+    void TestCaseOne_PushBackValueInOneDimensionalArray_() {
+
+        int primitiveArray[7] = { 1, 2, 3, 4, 5, 6, 7 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(7);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->PushBackValueInOneDimensionalArray(Array, 8);
+
+        int primitiveResultArray[8] = { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseTwo_PushBackValueInOneDimensionalArray_() {
+
+        int primitiveArray[4] = { -1, -2, -3, -4, };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(4);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->PushBackValueInOneDimensionalArray(Array, -2345);
+
+        int primitiveResultArray[8] = { -1, -2, -3, -4, -2345 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseThree_PushBackValueInOneDimensionalArray_() {
+
+        int primitiveArray[2] = { -12334, -12334 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(2);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->PushBackValueInOneDimensionalArray(Array, -12334);
+
+        int primitiveResultArray[8] = { -12334, -12334, -12334 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseOne_IsValueInOneDimensionalArray_() {
+
+        int primitiveArray[7] = { 1, 2, 3, 4, 5, 6, 7 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(7);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        assert(this->ArrayWorkFlow->IsValueInOneDimensionalArray(Array, 5) == true);
+    }
+
+    void TestCaseTwo_IsValueInOneDimensionalArray_() {
+
+        int primitiveArray[4] = { -1, -2, -3, -4, };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(4);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        assert(this->ArrayWorkFlow->IsValueInOneDimensionalArray(Array, 5) == false);
+    }
+
+    void TestCaseThree_IsValueInOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 0, -12334, -12334, 0, 0 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        assert(this->ArrayWorkFlow->IsValueInOneDimensionalArray(Array, 0) == true);
+    }
+
+    void TestCaseOne_NormaliseOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 0, 0, 0, 0, 0 };
+        OneDimensionalArrayType<int> Array;
+
+        Array = this->ArrayWorkFlow->NormaliseOneDimensionalArray(5);
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
+    }
+
+    void TestCaseTwo_NormaliseOneDimensionalArray_() {
+
+        int primitiveArray[7] = { 0, 0, 0, 0, 0, 0, 0 };
+        OneDimensionalArrayType<int> Array;
+
+        Array = this->ArrayWorkFlow->NormaliseOneDimensionalArray(7);
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
+    }
+
+    void TestCaseThree_NormaliseOneDimensionalArray_() {
+
+        int primitiveArray[4] = { 0, 0, 0, 0 };
+        OneDimensionalArrayType<int> Array;
+
+        Array = this->ArrayWorkFlow->NormaliseOneDimensionalArray(4);
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
+    }
+
+    void TestCaseOne_ConvertNumberToOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 1, 2, 3, 4, 5 };
+
+        OneDimensionalArrayType<int> Array;
+
+        Array = this->ArrayWorkFlow->ConvertNumberToOneDimensionalArray(12345);
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
+    }
+
+    void TestCaseTwo_ConvertNumberToOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 5, 4, 3, 2, 1 };
+
+        OneDimensionalArrayType<int> Array;
+
+        Array = this->ArrayWorkFlow->ConvertNumberToOneDimensionalArray(54321);
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
+    }
+
+    void TestCaseThree_ConvertNumberToOneDimensionalArray_() {
+
+        int primitiveArray[7] = { 1, 0, 4, 0, 0 };
+
+        OneDimensionalArrayType<int> Array;
+
+        Array = this->ArrayWorkFlow->ConvertNumberToOneDimensionalArray(10400);
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
+    }
+
+    void TestCaseOne_BoostUpOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 1, 2, 3, 4, 5 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->BoostUpOneDimensionalArray(Array, 5);
+
+        int primitiveResultArray[5] = { 5, 10, 15, 20, 25 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseTwo_BoostUpOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 0, 0, 0, 0, 0 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->BoostUpOneDimensionalArray(Array, 300);
+
+        int primitiveResultArray[5] = { 0, 0, 0, 0, 0 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseThree_BoostUpOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 1, 1, 0, 4, 5 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->BoostUpOneDimensionalArray(Array, 10);
+
+        int primitiveResultArray[5] = { 10, 10, 0, 40, 50 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseOne_BoostDownOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 10, 12, 30, 40, 50 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->BoostDownOneDimensionalArray(Array, 2);
+
+        int primitiveResultArray[5] = { 5, 6, 15, 20, 25 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseTwo_BoostDownOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 0, 0, 0, 0, 0 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->BoostDownOneDimensionalArray(Array, 300);
+
+        int primitiveResultArray[5] = { 0, 0, 0, 0, 0 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    void TestCaseThree_BoostDownOneDimensionalArray_() {
+
+        int primitiveArray[5] = { 100, 105, 110, 150, 190 };
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        Array = this->ArrayWorkFlow->BoostDownOneDimensionalArray(Array, 5);
+
+        int primitiveResultArray[5] = { 20, 21, 22, 30, 38 };
+
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
+    }
+
+    std::shared_ptr<AbstractOneDimensionalArrayWorkFlowObject<Type>> ArrayWorkFlow;
+    std::shared_ptr<AbstractTestsSupportObject<Type>> Tests;
 
 public:
     TestsOneDimensionalArrayWorkFlowObject() {
 
-        ArrayWorkFlow = &ArraysWorkflow;
-        Tests = &TestsWorkFlow;
+        ArrayWorkFlow = OneDimensionalArrayWorkFlowFactoryObject<Type>::GetOneDimensionalArrayWorkFlowObject();
+        Tests = TestsSupportFactoryObject<Type>::GetTestsSupportObject();
     }
 
     void Tests_GetMinimumValueFromOneDimensionalArray_() {
@@ -362,6 +591,48 @@ public:
         TestCaseOne_InitialiseOneDimensionalArray_();
         TestCaseTwo_InitialiseOneDimensionalArray_();
         TestCaseThree_InitialiseOneDimensionalArray_();
+    }
+
+    void Tests_PushBackValueInOneDimensionalArray_() {
+
+        TestCaseOne_PushBackValueInOneDimensionalArray_();
+        TestCaseTwo_PushBackValueInOneDimensionalArray_();
+        TestCaseThree_PushBackValueInOneDimensionalArray_();
+    }
+
+    void Tests_IsValueInOneDimensionalArray_() {
+
+        TestCaseOne_IsValueInOneDimensionalArray_();
+        TestCaseTwo_IsValueInOneDimensionalArray_();
+        TestCaseThree_IsValueInOneDimensionalArray_();
+    }
+
+    void Tests_NormaliseOneDimensionalArray_() {
+
+        TestCaseOne_NormaliseOneDimensionalArray_();
+        TestCaseTwo_NormaliseOneDimensionalArray_();
+        TestCaseThree_NormaliseOneDimensionalArray_();
+    }
+
+    void Tests_ConvertNumberToOneDimensionalArray_() {
+
+        TestCaseOne_ConvertNumberToOneDimensionalArray_();
+        TestCaseTwo_ConvertNumberToOneDimensionalArray_();
+        TestCaseThree_ConvertNumberToOneDimensionalArray_();
+    }
+
+    void Tests_BoostUpOneDimensionalArray_() {
+
+        TestCaseOne_BoostUpOneDimensionalArray_();
+        TestCaseTwo_BoostUpOneDimensionalArray_();
+        TestCaseThree_BoostUpOneDimensionalArray_();
+    }
+
+    void Tests_BoostDownOneDimensionalArray_() {
+
+        TestCaseOne_BoostDownOneDimensionalArray_();
+        TestCaseTwo_BoostDownOneDimensionalArray_();
+        TestCaseThree_BoostDownOneDimensionalArray_();
     }
 
     ~TestsOneDimensionalArrayWorkFlowObject() = default;

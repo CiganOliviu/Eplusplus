@@ -59,9 +59,11 @@ template <class Type> class OneDimensionalArrayTypeFactoryObject {
 public:
     OneDimensionalArrayTypeFactoryObject() = default;
 
-    static AbstractOneDimensionalArrayObject<Type> GetOneDimensionalArrayTypeObject() {
+    static std::shared_ptr<AbstractOneDimensionalArrayObject<Type>> GetOneDimensionalArrayTypeObject() {
 
-        return OneDimensionalArrayType<Type>();
+        AbstractOneDimensionalArrayObject<Type> * instance = new OneDimensionalArrayType<Type>();
+
+        return std::shared_ptr<AbstractOneDimensionalArrayObject<Type>>(instance);
     }
 
     ~OneDimensionalArrayTypeFactoryObject() = default;

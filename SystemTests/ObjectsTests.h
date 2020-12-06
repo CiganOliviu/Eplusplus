@@ -11,13 +11,12 @@
 template <class Type> class TestsOneDimensionalArrayObject {
 
 private:
-    AbstractTestsSupportObject<Type> * Tests;
-    TestsSupport<Type> TestsWorkFlow;
+    std::shared_ptr<AbstractTestsSupportObject<int>> Tests;
 
 public:
     TestsOneDimensionalArrayObject() {
 
-        Tests = &TestsWorkFlow;
+        Tests = TestsSupportFactoryObject<int>::GetTestsSupportObject();
     }
 
     void Test_Set_Get_Length_() {

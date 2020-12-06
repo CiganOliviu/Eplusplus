@@ -54,4 +54,19 @@ public:
     ~TestsSupport() = default;
 };
 
+template <class Type> class TestsSupportFactoryObject {
+
+public:
+    TestsSupportFactoryObject() = default;
+
+    static std::shared_ptr<AbstractTestsSupportObject<Type>> GetTestsSupportObject() {
+
+        AbstractTestsSupportObject<Type> * instance = new TestsSupport<Type>();
+
+        return std::shared_ptr<AbstractTestsSupportObject<Type>>(instance);
+    }
+
+    ~TestsSupportFactoryObject() = default;
+};
+
 #endif //EPLUSPLUS_TESTSSUPPORT_H

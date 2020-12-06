@@ -34,6 +34,12 @@ void RunOneDimensionalArrayWorkFlowTests() {
     ArrayTestsFloat.Tests_GetElementsMeanOfOneDimensionalArray_();
 
     ArrayTestsInteger.Tests_InitialiseOneDimensionalArray_();
+    ArrayTestsInteger.Tests_PushBackValueInOneDimensionalArray_();
+    ArrayTestsInteger.Tests_IsValueInOneDimensionalArray_();
+    ArrayTestsInteger.Tests_NormaliseOneDimensionalArray_();
+    ArrayTestsInteger.Tests_ConvertNumberToOneDimensionalArray_();
+    ArrayTestsInteger.Tests_BoostUpOneDimensionalArray_();
+    ArrayTestsInteger.Tests_BoostDownOneDimensionalArray_();
 }
 
 int main() {

@@ -10,8 +10,7 @@
 
 template <class Type> class TestsIOSystemsOneDimensionalArrayObject {
 private:
-    AbstractIOSystemsOneDimensionalArrayObject<Type> * IOSys;
-    IOSystemsOneDimensionalArray<Type> IO;
+    std::shared_ptr<AbstractIOSystemsOneDimensionalArrayObject<int>> IOSys;
 
     const char * STDIN_FILE_WITH_LENGTH = "EPPSystemTestingFiles/InputFiles/ArrayWithLength.txt";
     const char * STDIN_FILE_WITHOUT_LENGTH = "EPPSystemTestingFiles/InputFiles/ArrayWithoutLength.txt";
@@ -21,7 +20,7 @@ private:
 public:
     TestsIOSystemsOneDimensionalArrayObject() {
 
-        IOSys = &IO;
+        IOSys = IOSystemsOneDimensionalArrayFactoryObject<int>::GetIOSystemsOneDimensionalArray();
     }
 
     void Test_ReadAndOutputOneDimensionalArrayInConsole_() {

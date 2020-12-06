@@ -199,4 +199,19 @@ public:
     ~IOSystemsOneDimensionalArray() = default;
 };
 
+template <class Type> class IOSystemsOneDimensionalArrayFactoryObject {
+
+public:
+    IOSystemsOneDimensionalArrayFactoryObject() = default;
+
+    static std::shared_ptr<AbstractIOSystemsOneDimensionalArrayObject<Type>> GetIOSystemsOneDimensionalArray() {
+
+        AbstractIOSystemsOneDimensionalArrayObject<Type> * instance = new IOSystemsOneDimensionalArray<Type>();
+
+        return std::shared_ptr<AbstractIOSystemsOneDimensionalArrayObject<Type>>(instance);
+    }
+
+    ~IOSystemsOneDimensionalArrayFactoryObject() = default;
+};
+
 #endif //EPLUSPLUS_IOSYSTEMONEDIMENSIONALARRAY_H
