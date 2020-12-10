@@ -124,14 +124,14 @@ public:
 
         std::ifstream WorkingFile(fileName, std::ios::in);
 
-        CheckIfInputFileIsOpen(WorkingFile);
-        CheckIfInputFileIsEmpty(WorkingFile);
+        this->CheckIfInputFileIsOpen(WorkingFile);
+        this->CheckIfInputFileIsEmpty(WorkingFile);
 
-        int firstElementOfTheFile = ReadFirstElementFromFile(WorkingFile);
+        int firstElementOfTheFile = this->ReadFirstElementFromFile(WorkingFile);
 
         assert(firstElementOfTheFile >= 0);
 
-        OneDimensionalArrayType<Type> Array = GetArrayWithGivenLengthFromStdFileIn(WorkingFile, firstElementOfTheFile);
+        OneDimensionalArrayType<Type> Array = this->GetArrayWithGivenLengthFromStdFileIn(WorkingFile, firstElementOfTheFile);
 
         WorkingFile.close();
 
@@ -142,10 +142,10 @@ public:
 
         std::ifstream WorkingFile(fileName, std::ios::in);
 
-        CheckIfInputFileIsOpen(WorkingFile);
-        CheckIfInputFileIsEmpty(WorkingFile);
+        this->CheckIfInputFileIsOpen(WorkingFile);
+        this->CheckIfInputFileIsEmpty(WorkingFile);
 
-        OneDimensionalArrayType<Type> Array = GetArrayFromStdFileIn(WorkingFile);
+        OneDimensionalArrayType<Type> Array = this->GetArrayFromStdFileIn(WorkingFile);
 
         WorkingFile.close();
 
@@ -156,7 +156,7 @@ public:
 
         assert(Array.GetLengthOfOneDimensionalArray() >= 0);
 
-        PutsArrayInStdout(Array);
+        this->PutsArrayInStdout(Array);
     }
 
     void OutputOneDimensionalArrayWithLength(OneDimensionalArrayType<Type> Array) override {
@@ -165,7 +165,7 @@ public:
 
         std::cout << Array.GetLengthOfOneDimensionalArray() << std::endl;
 
-        PutsArrayInStdout(Array);
+        this->PutsArrayInStdout(Array);
     }
 
     void OutputOneDimensionalArrayInFileWithLength(OneDimensionalArrayType<Type> Array, const char * fileName) override {
@@ -174,11 +174,11 @@ public:
 
         std::ofstream WorkingFile(fileName, std::ios::out);
 
-        CheckIfOutputFileIsOpen(WorkingFile);
+        this->CheckIfOutputFileIsOpen(WorkingFile);
 
         WorkingFile << Array.GetLengthOfOneDimensionalArray() << '\n';
 
-        PutsArrayInStdFileOut(WorkingFile, Array);
+        this->PutsArrayInStdFileOut(WorkingFile, Array);
 
         WorkingFile.close();
     }
@@ -189,9 +189,9 @@ public:
 
         std::ofstream WorkingFile(fileName, std::ios::out);
 
-        CheckIfOutputFileIsOpen(WorkingFile);
+         this->CheckIfOutputFileIsOpen(WorkingFile);
 
-        PutsArrayInStdFileOut(WorkingFile, Array);
+         this->PutsArrayInStdFileOut(WorkingFile, Array);
 
         WorkingFile.close();
     }

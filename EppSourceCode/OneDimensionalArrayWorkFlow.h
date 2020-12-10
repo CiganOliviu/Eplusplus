@@ -133,7 +133,7 @@ public:
 
         assert(Array.GetLengthOfOneDimensionalArray() >= 0);
 
-        CheckIfElementsOfArrayAreDifferentThanZero(Array);
+        this->CheckIfElementsOfArrayAreDifferentThanZero(Array);
 
         Type result = Array.GetOneDimensionalArray()[0];
 
@@ -147,7 +147,7 @@ public:
 
         assert(Array.GetLengthOfOneDimensionalArray() >= 0);
 
-        CheckIfElementsOfArrayAreDifferentThanZero(Array);
+        this->CheckIfElementsOfArrayAreDifferentThanZero(Array);
 
         Type result = 0;
 

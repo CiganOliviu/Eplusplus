@@ -539,100 +539,100 @@ public:
 
     void Tests_GetMinimumValueFromOneDimensionalArray_() {
 
-        TestCaseOne_GetMinimumValueFromOneDimensionalArray_();
-        TestCaseTwo_GetMinimumValueFromOneDimensionalArray_();
-        TestCaseThree_GetMinimumValueFromOneDimensionalArray_();
+        this->TestCaseOne_GetMinimumValueFromOneDimensionalArray_();
+        this->TestCaseTwo_GetMinimumValueFromOneDimensionalArray_();
+        this->TestCaseThree_GetMinimumValueFromOneDimensionalArray_();
     }
 
     void Tests_GetMaximumValueFromOneDimensionalArray_() {
 
-        TestCaseOne_GetMaximumValueFromOneDimensionalArray_();
-        TestCaseTwo_GetMaximumValueFromOneDimensionalArray_();
-        TestCaseThree_GetMaximumValueFromOneDimensionalArray_();
+        this->TestCaseOne_GetMaximumValueFromOneDimensionalArray_();
+        this->TestCaseTwo_GetMaximumValueFromOneDimensionalArray_();
+        this->TestCaseThree_GetMaximumValueFromOneDimensionalArray_();
     }
 
     void Tests_GetElementsSumOfOneDimensionalArray_() {
 
-        TestCaseOne_GetElementsSumOfOneDimensionalArray_();
-        TestCaseTwo_GetElementsSumOfOneDimensionalArray_();
-        TestCaseThree_GetElementsSumOfOneDimensionalArray_();
+        this->TestCaseOne_GetElementsSumOfOneDimensionalArray_();
+        this->TestCaseTwo_GetElementsSumOfOneDimensionalArray_();
+        this->TestCaseThree_GetElementsSumOfOneDimensionalArray_();
     }
 
     void Tests_GetElementsProductOfOneDimensionalArray_() {
 
-        TestCaseOne_GetElementsProductOfOneDimensionalArray_();
-        TestCaseTwo_GetElementsProductOfOneDimensionalArray_();
-        TestCaseThree_GetElementsProductOfOneDimensionalArray_();
+        this->TestCaseOne_GetElementsProductOfOneDimensionalArray_();
+        this->TestCaseTwo_GetElementsProductOfOneDimensionalArray_();
+        this->TestCaseThree_GetElementsProductOfOneDimensionalArray_();
     }
 
     void Tests_GetElementsSubtractionOfOneDimensionalArray_() {
 
-        TestCaseOne_GetElementsSubtractionOfOneDimensionalArray_();
-        TestCaseTwo_GetElementsSubtractionOfOneDimensionalArray_();
-        TestCaseThree_GetElementsSubtractionOfOneDimensionalArray_();
+        this->TestCaseOne_GetElementsSubtractionOfOneDimensionalArray_();
+        this->TestCaseTwo_GetElementsSubtractionOfOneDimensionalArray_();
+        this->TestCaseThree_GetElementsSubtractionOfOneDimensionalArray_();
     }
 
     void Tests_GetElementsDivisionOfOneDimensionalArray_() {
 
-        TestCaseOne_GetElementsDivisionOfOneDimensionalArray_();
-        TestCaseTwo_GetElementsDivisionOfOneDimensionalArray_();
-        TestCaseThree_GetElementsDivisionOfOneDimensionalArray_();
+        this->TestCaseOne_GetElementsDivisionOfOneDimensionalArray_();
+        this->TestCaseTwo_GetElementsDivisionOfOneDimensionalArray_();
+        this->TestCaseThree_GetElementsDivisionOfOneDimensionalArray_();
     }
 
     void Tests_GetElementsMeanOfOneDimensionalArray_() {
 
-        TestCaseOne_GetElementsMeanOfOneDimensionalArray_();
-        TestCaseTwo_GetElementsMeanOfOneDimensionalArray_();
-        TestCaseThree_GetElementsMeanOfOneDimensionalArray_();
+        this->TestCaseOne_GetElementsMeanOfOneDimensionalArray_();
+        this->TestCaseTwo_GetElementsMeanOfOneDimensionalArray_();
+        this->TestCaseThree_GetElementsMeanOfOneDimensionalArray_();
     }
 
     void Tests_InitialiseOneDimensionalArray_() {
 
-        TestCaseOne_InitialiseOneDimensionalArray_();
-        TestCaseTwo_InitialiseOneDimensionalArray_();
-        TestCaseThree_InitialiseOneDimensionalArray_();
+        this->TestCaseOne_InitialiseOneDimensionalArray_();
+        this->TestCaseTwo_InitialiseOneDimensionalArray_();
+        this->TestCaseThree_InitialiseOneDimensionalArray_();
     }
 
     void Tests_PushBackValueInOneDimensionalArray_() {
 
-        TestCaseOne_PushBackValueInOneDimensionalArray_();
-        TestCaseTwo_PushBackValueInOneDimensionalArray_();
-        TestCaseThree_PushBackValueInOneDimensionalArray_();
+        this->TestCaseOne_PushBackValueInOneDimensionalArray_();
+        this->TestCaseTwo_PushBackValueInOneDimensionalArray_();
+        this->TestCaseThree_PushBackValueInOneDimensionalArray_();
     }
 
     void Tests_IsValueInOneDimensionalArray_() {
 
-        TestCaseOne_IsValueInOneDimensionalArray_();
-        TestCaseTwo_IsValueInOneDimensionalArray_();
-        TestCaseThree_IsValueInOneDimensionalArray_();
+        this->TestCaseOne_IsValueInOneDimensionalArray_();
+        this->TestCaseTwo_IsValueInOneDimensionalArray_();
+        this->TestCaseThree_IsValueInOneDimensionalArray_();
     }
 
     void Tests_NormaliseOneDimensionalArray_() {
 
-        TestCaseOne_NormaliseOneDimensionalArray_();
-        TestCaseTwo_NormaliseOneDimensionalArray_();
-        TestCaseThree_NormaliseOneDimensionalArray_();
+        this->TestCaseOne_NormaliseOneDimensionalArray_();
+        this->TestCaseTwo_NormaliseOneDimensionalArray_();
+        this->TestCaseThree_NormaliseOneDimensionalArray_();
     }
 
     void Tests_ConvertNumberToOneDimensionalArray_() {
 
-        TestCaseOne_ConvertNumberToOneDimensionalArray_();
-        TestCaseTwo_ConvertNumberToOneDimensionalArray_();
-        TestCaseThree_ConvertNumberToOneDimensionalArray_();
+        this->TestCaseOne_ConvertNumberToOneDimensionalArray_();
+        this->TestCaseTwo_ConvertNumberToOneDimensionalArray_();
+        this->TestCaseThree_ConvertNumberToOneDimensionalArray_();
     }
 
     void Tests_BoostUpOneDimensionalArray_() {
 
-        TestCaseOne_BoostUpOneDimensionalArray_();
-        TestCaseTwo_BoostUpOneDimensionalArray_();
-        TestCaseThree_BoostUpOneDimensionalArray_();
+        this->TestCaseOne_BoostUpOneDimensionalArray_();
+        this->TestCaseTwo_BoostUpOneDimensionalArray_();
+        this->TestCaseThree_BoostUpOneDimensionalArray_();
     }
 
     void Tests_BoostDownOneDimensionalArray_() {
 
-        TestCaseOne_BoostDownOneDimensionalArray_();
-        TestCaseTwo_BoostDownOneDimensionalArray_();
-        TestCaseThree_BoostDownOneDimensionalArray_();
+        this->TestCaseOne_BoostDownOneDimensionalArray_();
+        this->TestCaseTwo_BoostDownOneDimensionalArray_();
+        this->TestCaseThree_BoostDownOneDimensionalArray_();
     }
 
     ~TestsOneDimensionalArrayWorkFlowObject() = default;
