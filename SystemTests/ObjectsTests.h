@@ -6,6 +6,7 @@
 #define EPLUSPLUS_OBJECTSTESTS_H
 
 #include "../DataStructures/OneDimensionalArray.h"
+#include "../DataStructures/Matrix.h"
 #include "TestsSupport.h"
 
 template <class Type> class TestsOneDimensionalArrayObject {
@@ -40,6 +41,50 @@ public:
     }
 
     ~TestsOneDimensionalArrayObject() = default;
+};
+
+template <class Type> class TestsMatrixObject {
+
+private:
+    std::shared_ptr<AbstractTestsSupportObject<int>> Tests;
+
+public:
+    TestsMatrixObject() {
+
+        Tests = TestsSupportFactoryObject<Type>::GetTestsSupportObject();
+    }
+
+    void Test_Set_Get_Line_() {
+
+        MatrixType<Type> Array;
+
+        Array.SetLineOfMatrix(5);
+
+        assert(Array.GetLineOfMatrix() == 5);
+    }
+
+    void Test_Set_Get_Column_() {
+
+        MatrixType<Type> Array;
+
+        Array.SetColumnOfMatrix(5);
+
+        assert(Array.GetColumnOfMatrix() == 5);
+    }
+
+    void Test_Set_Get_Matrix_() {
+
+        Type primitiveMatrix[][STANDARD_LENGTH] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+
+        MatrixType<Type> Array;
+        Array.SetLineOfMatrix(3);
+        Array.SetColumnOfMatrix(3);
+        Array.SetMatrix(primitiveMatrix);
+
+        Tests->AssertMatrixObjectWithPrimitive(Array, primitiveMatrix);
+    }
+
+    ~TestsMatrixObject() = default;
 };
 
 #endif //EPLUSPLUS_OBJECTSTESTS_H

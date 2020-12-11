@@ -17,7 +17,7 @@ public:
     virtual void SetColumnOfMatrix(unsigned int column) {}
 
     virtual Type ** GetMatrix() {}
-    virtual void SetMatrix(Type ** Array) {}
+    virtual void SetMatrix(Type Array[][STANDARD_LENGTH]) {}
 
     ~AbstractMatrixTypeObject() = default;
 };
@@ -34,7 +34,7 @@ public:
 
     MatrixType() {
 
-        for (int iterator = 0; iterator < length; ++iterator)
+        for (int iterator = 0; iterator < this->_line; ++iterator)
             this->Matrix[iterator] = (Type *) malloc(this->_line * sizeof(Type));
     }
 
@@ -58,15 +58,15 @@ public:
         this->_column = column;
     }
 
-
     Type ** GetMatrix() override {
 
         return this->Matrix;
     }
 
-    void SetMatrix(Type ** Array) override {
+    void SetMatrix(Type Array[][STANDARD_LENGTH]) override {
 
-        this->Matrix = Array;
+        for (int iterator = 0; iterator < this->_line; ++iterator)
+            this->Matrix[iterator] = Array[iterator];
     }
 
     ~MatrixType() = default;

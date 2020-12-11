@@ -5,9 +5,14 @@
 void RunODAObjectTests() {
 
     TestsOneDimensionalArrayObject<int> ODAObject;
+    TestsMatrixObject<int> MatrixObject;
 
     ODAObject.Test_Set_Get_Length_();
     ODAObject.Test_Set_Get_OneDimensionalArray_();
+
+    MatrixObject.Test_Set_Get_Line_();
+    MatrixObject.Test_Set_Get_Column_();
+    MatrixObject.Test_Set_Get_Matrix_();
 }
 
 void RunIOTests() {
