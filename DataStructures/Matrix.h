@@ -38,33 +38,33 @@ public:
             this->Matrix[iterator] = (Type *) malloc(this->_line * sizeof(Type));
     }
 
-    unsigned int GetLineOfMatrix() {
+    unsigned int GetLineOfMatrix() override {
 
         return this->_line;
     }
 
-    void SetLineOfMatrix(unsigned int line) {
+    void SetLineOfMatrix(unsigned int line) override {
 
         this->_line = line;
     }
 
-    unsigned int GetColumnOfMatrix() {
+    unsigned int GetColumnOfMatrix() override {
 
         return this->_column;
     }
 
-    void SetColumnOfMatrix(unsigned int column) {
+    void SetColumnOfMatrix(unsigned int column) override {
 
         this->_column = column;
     }
 
 
-    Type ** GetMatrix() {
+    Type ** GetMatrix() override {
 
         return this->Matrix;
     }
 
-    void SetMatrix(Type ** Array) {
+    void SetMatrix(Type ** Array) override {
 
         this->Matrix = Array;
     }
