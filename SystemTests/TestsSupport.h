@@ -47,9 +47,9 @@ public:
 
     void AssertOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override {
 
-        assert(FirstArray.GetOneDimensionalArray() > 0);
-        assert(SecondArray.GetOneDimensionalArray() > 0);
-        assert(FirstArray.GetOneDimensionalArray() == SecondArray.GetOneDimensionalArray());
+        assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
+        assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
+        assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
 
         int CommonLength = FirstArray.GetLengthOfOneDimensionalArray();
 

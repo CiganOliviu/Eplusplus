@@ -45,6 +45,11 @@ void RunOneDimensionalArrayWorkFlowTests() {
     ArrayTestsInteger.Tests_ConvertNumberToOneDimensionalArray_();
     ArrayTestsInteger.Tests_BoostUpOneDimensionalArray_();
     ArrayTestsInteger.Tests_BoostDownOneDimensionalArray_();
+
+    ArrayTestsInteger.Tests_GetSumOfOneDimensionalArrayObjects_();
+    ArrayTestsInteger.Tests_GetSubtractionOfOneDimensionalArrayObjects_();
+    ArrayTestsInteger.Tests_GetDivisionOfOneDimensionalArrayObjects_();
+    ArrayTestsInteger.Tests_GetProductOfOneDimensionalArrayObjects_();
 }
 
 int main() {

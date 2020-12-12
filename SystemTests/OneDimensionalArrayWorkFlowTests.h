@@ -527,6 +527,274 @@ private:
         this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveResultArray);
     }
 
+    void TestCaseOne_GetSumOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(5);
+        int firstPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(5);
+        int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(5);
+        int resultPrimitiveArray[5] = { 2, 4, 6, 8, 10 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+    void TestCaseTwo_GetSumOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(3);
+        int firstPrimitiveArray[3] = { 0, 0, 0 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(3);
+        int secondPrimitiveArray[3] = { -2, 5, -6 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(3);
+        int resultPrimitiveArray[3] = { -2, 5, -6 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+
+    void TestCaseThree_GetSumOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(4);
+        int firstPrimitiveArray[4] = { 12, -213, 432, -6456 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(4);
+        int secondPrimitiveArray[4] = { -12, 213, -432, 6456 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(4);
+        int resultPrimitiveArray[4] = { 0, 0, 0, 0 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+    void TestCaseOne_GetSubtractionOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(5);
+        int firstPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(5);
+        int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(5);
+        int resultPrimitiveArray[5] = { 0, 0, 0, 0, 0 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+    void TestCaseTwo_GetSubtractionOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(3);
+        int firstPrimitiveArray[3] = { 0, 0, 0 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(3);
+        int secondPrimitiveArray[3] = { -2, 5, -6 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(3);
+        int resultPrimitiveArray[3] = { 2, -5, 6 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+
+    void TestCaseThree_GetSubtractionOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(4);
+        int firstPrimitiveArray[4] = { 12, -213, 432, -6456 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(4);
+        int secondPrimitiveArray[4] = { -12, 213, -432, 6456 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(4);
+        int resultPrimitiveArray[4] = { 24, -426, 864, -12912 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+    void TestCaseOne_GetDivisionOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(5);
+        int firstPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(5);
+        int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(5);
+        int resultPrimitiveArray[5] = { 1, 1, 1, 1, 1 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+    void TestCaseTwo_GetDivisionOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(3);
+        int firstPrimitiveArray[3] = { 0, 0, 0 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(3);
+        int secondPrimitiveArray[3] = { -2, 5, -6 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(3);
+        int resultPrimitiveArray[3] = { 0, 0, 0 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+
+    void TestCaseThree_GetDivisionOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(4);
+        int firstPrimitiveArray[4] = { 12, -213, 432, -6456 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(4);
+        int secondPrimitiveArray[4] = { 2, 3, 4, 5 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(4);
+        int resultPrimitiveArray[4] = { 6, -71, 108, -1291 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+    void TestCaseOne_GetProductOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(5);
+        int firstPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(5);
+        int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(5);
+        int resultPrimitiveArray[5] = { 1, 4, 9, 16, 25 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+    void TestCaseTwo_GetProductOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(3);
+        int firstPrimitiveArray[3] = { 0, 0, 0 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(3);
+        int secondPrimitiveArray[3] = { -2, 5, -6 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(3);
+        int resultPrimitiveArray[3] = { 0, 0, 0 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
+
+    void TestCaseThree_GetProductOfOneDimensionalArrayObjects_() {
+
+        OneDimensionalArrayType<int> FirstArray;
+        FirstArray.SetLengthOfOneDimensionalArray(4);
+        int firstPrimitiveArray[4] = { 12, -213, 432, -6456 };
+        FirstArray.SetOneDimensionalArray(firstPrimitiveArray);
+
+        OneDimensionalArrayType<int> SecondArray;
+        SecondArray.SetLengthOfOneDimensionalArray(4);
+        int secondPrimitiveArray[4] = { 2, 3, 4, 5 };
+        SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
+
+        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(4);
+        int resultPrimitiveArray[4] = { 24, -639, 1728, -32280 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
+    }
+
     std::shared_ptr<AbstractOneDimensionalArrayWorkFlowObject<Type>> ArrayWorkFlow;
     std::shared_ptr<AbstractTestsSupportObject<Type>> Tests;
 
@@ -633,6 +901,34 @@ public:
         this->TestCaseOne_BoostDownOneDimensionalArray_();
         this->TestCaseTwo_BoostDownOneDimensionalArray_();
         this->TestCaseThree_BoostDownOneDimensionalArray_();
+    }
+
+    void Tests_GetSumOfOneDimensionalArrayObjects_() {
+
+        this->TestCaseOne_GetSumOfOneDimensionalArrayObjects_();
+        this->TestCaseTwo_GetSumOfOneDimensionalArrayObjects_();
+        this->TestCaseThree_GetSumOfOneDimensionalArrayObjects_();
+    }
+
+    void Tests_GetSubtractionOfOneDimensionalArrayObjects_() {
+
+        this->TestCaseOne_GetSubtractionOfOneDimensionalArrayObjects_();
+        this->TestCaseTwo_GetSubtractionOfOneDimensionalArrayObjects_();
+        this->TestCaseThree_GetSubtractionOfOneDimensionalArrayObjects_();
+    }
+
+    void Tests_GetDivisionOfOneDimensionalArrayObjects_() {
+
+        this->TestCaseOne_GetDivisionOfOneDimensionalArrayObjects_();
+        this->TestCaseTwo_GetDivisionOfOneDimensionalArrayObjects_();
+        this->TestCaseThree_GetDivisionOfOneDimensionalArrayObjects_();
+    }
+
+    void Tests_GetProductOfOneDimensionalArrayObjects_() {
+
+        this->TestCaseOne_GetProductOfOneDimensionalArrayObjects_();
+        this->TestCaseTwo_GetProductOfOneDimensionalArrayObjects_();
+        this->TestCaseThree_GetProductOfOneDimensionalArrayObjects_();
     }
 
     ~TestsOneDimensionalArrayWorkFlowObject() = default;

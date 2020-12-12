@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/Matrix.h
+
 /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
 ../PreprocessorDirectives/StandardLibrary.h
 /media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/StandardLibrary.h
@@ -45,6 +47,8 @@ TestsSupport.h
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/ObjectsTests.h
 ../DataStructures/OneDimensionalArray.h
 /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+../DataStructures/Matrix.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/Matrix.h
 TestsSupport.h
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/TestsSupport.h
 
@@ -61,6 +65,8 @@ TestsSupport.h
 /media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
 ../DataStructures/OneDimensionalArray.h
 /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+../DataStructures/Matrix.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/Matrix.h
 
 /media/cigan/Personal/Projects/Eplusplus/main.cpp
 SystemTests/ObjectsTests.h
