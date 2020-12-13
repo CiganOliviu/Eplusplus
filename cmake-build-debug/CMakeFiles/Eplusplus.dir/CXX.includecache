@@ -18,6 +18,10 @@
 ../DataStructures/OneDimensionalArray.h
 /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
 
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArraySortingWorkFlow.h
+../DataStructures/OneDimensionalArray.h
+/media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
+
 /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArrayWorkFlow.h
 ../DataStructures/OneDimensionalArray.h
 /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
@@ -52,6 +56,10 @@ TestsSupport.h
 TestsSupport.h
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/TestsSupport.h
 
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArraySortingWorkFlowTests.h
+../EppSourceCode/OneDimensionalArraySortingWorkFlow.h
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArraySortingWorkFlow.h
+
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArrayWorkFlowTests.h
 ../EppSourceCode/OneDimensionalArrayWorkFlow.h
 /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArrayWorkFlow.h
@@ -75,4 +83,6 @@ SystemTests/IOSystemsTests.h
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/IOSystemsTests.h
 SystemTests/OneDimensionalArrayWorkFlowTests.h
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArrayWorkFlowTests.h
+SystemTests/OneDimensionalArraySortingWorkFlowTests.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArraySortingWorkFlowTests.h
 

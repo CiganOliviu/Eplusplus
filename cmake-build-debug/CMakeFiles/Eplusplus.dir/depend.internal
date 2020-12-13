@@ -5,11 +5,13 @@ CMakeFiles/Eplusplus.dir/main.cpp.o
  /media/cigan/Personal/Projects/Eplusplus/DataStructures/Matrix.h
  /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
  /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/IOSystemsOneDimensionalArray.h
+ /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArraySortingWorkFlow.h
  /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/OneDimensionalArrayWorkFlow.h
  /media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
  /media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/StandardLibrary.h
  /media/cigan/Personal/Projects/Eplusplus/SystemTests/IOSystemsTests.h
  /media/cigan/Personal/Projects/Eplusplus/SystemTests/ObjectsTests.h
+ /media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArraySortingWorkFlowTests.h
  /media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArrayWorkFlowTests.h
  /media/cigan/Personal/Projects/Eplusplus/SystemTests/TestsSupport.h
  /media/cigan/Personal/Projects/Eplusplus/main.cpp

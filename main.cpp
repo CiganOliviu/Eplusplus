@@ -1,8 +1,9 @@
 #include "SystemTests/ObjectsTests.h"
 #include "SystemTests/IOSystemsTests.h"
 #include "SystemTests/OneDimensionalArrayWorkFlowTests.h"
+#include "SystemTests/OneDimensionalArraySortingWorkFlowTests.h"
 
-void RunODAObjectTests() {
+void RunObjectsTests() {
 
     TestsOneDimensionalArrayObject<int> ODAObject;
     TestsMatrixObject<int> MatrixObject;
@@ -29,35 +30,43 @@ void RunOneDimensionalArrayWorkFlowTests() {
     TestsOneDimensionalArrayWorkFlowObject<int> ArrayTestsInteger;
     TestsOneDimensionalArrayWorkFlowObject<float> ArrayTestsFloat;
 
-    ArrayTestsInteger.Tests_GetMinimumValueFromOneDimensionalArray_();
-    ArrayTestsInteger.Tests_GetMaximumValueFromOneDimensionalArray_();
-    ArrayTestsInteger.Tests_GetElementsSumOfOneDimensionalArray_();
-    ArrayTestsInteger.Tests_GetElementsProductOfOneDimensionalArray_();
-    ArrayTestsInteger.Tests_GetElementsSubtractionOfOneDimensionalArray_();
+    ArrayTestsInteger.Test_GetMinimumValueFromOneDimensionalArray_();
+    ArrayTestsInteger.Test_GetMaximumValueFromOneDimensionalArray_();
+    ArrayTestsInteger.Test_GetElementsSumOfOneDimensionalArray_();
+    ArrayTestsInteger.Test_GetElementsProductOfOneDimensionalArray_();
+    ArrayTestsInteger.Test_GetElementsSubtractionOfOneDimensionalArray_();
 
-    ArrayTestsFloat.Tests_GetElementsDivisionOfOneDimensionalArray_();
-    ArrayTestsFloat.Tests_GetElementsMeanOfOneDimensionalArray_();
+    ArrayTestsFloat.Test_GetElementsDivisionOfOneDimensionalArray_();
+    ArrayTestsFloat.Test_GetElementsMeanOfOneDimensionalArray_();
 
-    ArrayTestsInteger.Tests_InitialiseOneDimensionalArray_();
-    ArrayTestsInteger.Tests_PushBackValueInOneDimensionalArray_();
-    ArrayTestsInteger.Tests_IsValueInOneDimensionalArray_();
-    ArrayTestsInteger.Tests_NormaliseOneDimensionalArray_();
-    ArrayTestsInteger.Tests_ConvertNumberToOneDimensionalArray_();
-    ArrayTestsInteger.Tests_BoostUpOneDimensionalArray_();
-    ArrayTestsInteger.Tests_BoostDownOneDimensionalArray_();
+    ArrayTestsInteger.Test_InitialiseOneDimensionalArray_();
+    ArrayTestsInteger.Test_PushBackValueInOneDimensionalArray_();
+    ArrayTestsInteger.Test_IsValueInOneDimensionalArray_();
+    ArrayTestsInteger.Test_NormaliseOneDimensionalArray_();
+    ArrayTestsInteger.Test_ConvertNumberToOneDimensionalArray_();
+    ArrayTestsInteger.Test_BoostUpOneDimensionalArray_();
+    ArrayTestsInteger.Test_BoostDownOneDimensionalArray_();
 
-    ArrayTestsInteger.Tests_GetSumOfOneDimensionalArrayObjects_();
-    ArrayTestsInteger.Tests_GetSubtractionOfOneDimensionalArrayObjects_();
-    ArrayTestsInteger.Tests_GetDivisionOfOneDimensionalArrayObjects_();
-    ArrayTestsInteger.Tests_GetProductOfOneDimensionalArrayObjects_();
+    ArrayTestsInteger.Test_GetSumOfOneDimensionalArrayObjects_();
+    ArrayTestsInteger.Test_GetSubtractionOfOneDimensionalArrayObjects_();
+    ArrayTestsInteger.Test_GetDivisionOfOneDimensionalArrayObjects_();
+    ArrayTestsInteger.Test_GetProductOfOneDimensionalArrayObjects_();
+}
+
+void RunOneDimensionalArraySortingWorkFlowTests() {
+
+    TestsOneDimensionalArraySortingWorkFlowObject<int> ArraySortTests;
+
+    ArraySortTests.Test_BubbleSortOneDimensionalArray_();
 }
 
 int main() {
 
-    RunODAObjectTests();
+    RunObjectsTests();
     // This suit of tests require console input, run it AFTER YOU READ THE CODE FROM IT! Delete this comment if out of date.
     // RunIOTests();
     RunOneDimensionalArrayWorkFlowTests();
+    RunOneDimensionalArraySortingWorkFlowTests();
 
     return 0;
 }

@@ -638,7 +638,6 @@ private:
         this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
     }
 
-
     void TestCaseThree_GetSubtractionOfOneDimensionalArrayObjects_() {
 
         OneDimensionalArrayType<int> FirstArray;
@@ -805,126 +804,126 @@ public:
         Tests = TestsSupportFactoryObject<Type>::GetTestsSupportObject();
     }
 
-    void Tests_GetMinimumValueFromOneDimensionalArray_() {
+    void Test_GetMinimumValueFromOneDimensionalArray_() {
 
         this->TestCaseOne_GetMinimumValueFromOneDimensionalArray_();
         this->TestCaseTwo_GetMinimumValueFromOneDimensionalArray_();
         this->TestCaseThree_GetMinimumValueFromOneDimensionalArray_();
     }
 
-    void Tests_GetMaximumValueFromOneDimensionalArray_() {
+    void Test_GetMaximumValueFromOneDimensionalArray_() {
 
         this->TestCaseOne_GetMaximumValueFromOneDimensionalArray_();
         this->TestCaseTwo_GetMaximumValueFromOneDimensionalArray_();
         this->TestCaseThree_GetMaximumValueFromOneDimensionalArray_();
     }
 
-    void Tests_GetElementsSumOfOneDimensionalArray_() {
+    void Test_GetElementsSumOfOneDimensionalArray_() {
 
         this->TestCaseOne_GetElementsSumOfOneDimensionalArray_();
         this->TestCaseTwo_GetElementsSumOfOneDimensionalArray_();
         this->TestCaseThree_GetElementsSumOfOneDimensionalArray_();
     }
 
-    void Tests_GetElementsProductOfOneDimensionalArray_() {
+    void Test_GetElementsProductOfOneDimensionalArray_() {
 
         this->TestCaseOne_GetElementsProductOfOneDimensionalArray_();
         this->TestCaseTwo_GetElementsProductOfOneDimensionalArray_();
         this->TestCaseThree_GetElementsProductOfOneDimensionalArray_();
     }
 
-    void Tests_GetElementsSubtractionOfOneDimensionalArray_() {
+    void Test_GetElementsSubtractionOfOneDimensionalArray_() {
 
         this->TestCaseOne_GetElementsSubtractionOfOneDimensionalArray_();
         this->TestCaseTwo_GetElementsSubtractionOfOneDimensionalArray_();
         this->TestCaseThree_GetElementsSubtractionOfOneDimensionalArray_();
     }
 
-    void Tests_GetElementsDivisionOfOneDimensionalArray_() {
+    void Test_GetElementsDivisionOfOneDimensionalArray_() {
 
         this->TestCaseOne_GetElementsDivisionOfOneDimensionalArray_();
         this->TestCaseTwo_GetElementsDivisionOfOneDimensionalArray_();
         this->TestCaseThree_GetElementsDivisionOfOneDimensionalArray_();
     }
 
-    void Tests_GetElementsMeanOfOneDimensionalArray_() {
+    void Test_GetElementsMeanOfOneDimensionalArray_() {
 
         this->TestCaseOne_GetElementsMeanOfOneDimensionalArray_();
         this->TestCaseTwo_GetElementsMeanOfOneDimensionalArray_();
         this->TestCaseThree_GetElementsMeanOfOneDimensionalArray_();
     }
 
-    void Tests_InitialiseOneDimensionalArray_() {
+    void Test_InitialiseOneDimensionalArray_() {
 
         this->TestCaseOne_InitialiseOneDimensionalArray_();
         this->TestCaseTwo_InitialiseOneDimensionalArray_();
         this->TestCaseThree_InitialiseOneDimensionalArray_();
     }
 
-    void Tests_PushBackValueInOneDimensionalArray_() {
+    void Test_PushBackValueInOneDimensionalArray_() {
 
         this->TestCaseOne_PushBackValueInOneDimensionalArray_();
         this->TestCaseTwo_PushBackValueInOneDimensionalArray_();
         this->TestCaseThree_PushBackValueInOneDimensionalArray_();
     }
 
-    void Tests_IsValueInOneDimensionalArray_() {
+    void Test_IsValueInOneDimensionalArray_() {
 
         this->TestCaseOne_IsValueInOneDimensionalArray_();
         this->TestCaseTwo_IsValueInOneDimensionalArray_();
         this->TestCaseThree_IsValueInOneDimensionalArray_();
     }
 
-    void Tests_NormaliseOneDimensionalArray_() {
+    void Test_NormaliseOneDimensionalArray_() {
 
         this->TestCaseOne_NormaliseOneDimensionalArray_();
         this->TestCaseTwo_NormaliseOneDimensionalArray_();
         this->TestCaseThree_NormaliseOneDimensionalArray_();
     }
 
-    void Tests_ConvertNumberToOneDimensionalArray_() {
+    void Test_ConvertNumberToOneDimensionalArray_() {
 
         this->TestCaseOne_ConvertNumberToOneDimensionalArray_();
         this->TestCaseTwo_ConvertNumberToOneDimensionalArray_();
         this->TestCaseThree_ConvertNumberToOneDimensionalArray_();
     }
 
-    void Tests_BoostUpOneDimensionalArray_() {
+    void Test_BoostUpOneDimensionalArray_() {
 
         this->TestCaseOne_BoostUpOneDimensionalArray_();
         this->TestCaseTwo_BoostUpOneDimensionalArray_();
         this->TestCaseThree_BoostUpOneDimensionalArray_();
     }
 
-    void Tests_BoostDownOneDimensionalArray_() {
+    void Test_BoostDownOneDimensionalArray_() {
 
         this->TestCaseOne_BoostDownOneDimensionalArray_();
         this->TestCaseTwo_BoostDownOneDimensionalArray_();
         this->TestCaseThree_BoostDownOneDimensionalArray_();
     }
 
-    void Tests_GetSumOfOneDimensionalArrayObjects_() {
+    void Test_GetSumOfOneDimensionalArrayObjects_() {
 
         this->TestCaseOne_GetSumOfOneDimensionalArrayObjects_();
         this->TestCaseTwo_GetSumOfOneDimensionalArrayObjects_();
         this->TestCaseThree_GetSumOfOneDimensionalArrayObjects_();
     }
 
-    void Tests_GetSubtractionOfOneDimensionalArrayObjects_() {
+    void Test_GetSubtractionOfOneDimensionalArrayObjects_() {
 
         this->TestCaseOne_GetSubtractionOfOneDimensionalArrayObjects_();
         this->TestCaseTwo_GetSubtractionOfOneDimensionalArrayObjects_();
         this->TestCaseThree_GetSubtractionOfOneDimensionalArrayObjects_();
     }
 
-    void Tests_GetDivisionOfOneDimensionalArrayObjects_() {
+    void Test_GetDivisionOfOneDimensionalArrayObjects_() {
 
         this->TestCaseOne_GetDivisionOfOneDimensionalArrayObjects_();
         this->TestCaseTwo_GetDivisionOfOneDimensionalArrayObjects_();
         this->TestCaseThree_GetDivisionOfOneDimensionalArrayObjects_();
     }
 
-    void Tests_GetProductOfOneDimensionalArrayObjects_() {
+    void Test_GetProductOfOneDimensionalArrayObjects_() {
 
         this->TestCaseOne_GetProductOfOneDimensionalArrayObjects_();
         this->TestCaseTwo_GetProductOfOneDimensionalArrayObjects_();
