@@ -33,7 +33,7 @@ private:
 public:
     OneDimensionalArraySortingWorkFlow() = default;
 
-    OneDimensionalArrayType<Type> BubbleSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+    OneDimensionalArrayType<Type> BubbleSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
         assert(Array.GetLengthOfOneDimensionalArray() > 0);
 
@@ -47,19 +47,19 @@ public:
         return Result;
     }
 
-    OneDimensionalArrayType<Type> MinimumValueSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+    OneDimensionalArrayType<Type> MinimumValueSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
     }
 
-    OneDimensionalArrayType<Type> InsertionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+    OneDimensionalArrayType<Type> InsertionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
     }
 
-    OneDimensionalArrayType<Type> SelectionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+    OneDimensionalArrayType<Type> SelectionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
     }
 
-    OneDimensionalArrayType<Type> ShellSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+    OneDimensionalArrayType<Type> ShellSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
     }
 
