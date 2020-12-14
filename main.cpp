@@ -58,6 +58,8 @@ void RunOneDimensionalArraySortingWorkFlowTests() {
     TestsOneDimensionalArraySortingWorkFlowObject<int> ArraySortTests;
 
     ArraySortTests.Test_BubbleSortOneDimensionalArray_();
+    ArraySortTests.Test_MinimumValueSortOneDimensionalArray_();
+    ArraySortTests.Test_SelectionSortOneDimensionalArray_();
 }
 
 int main() {

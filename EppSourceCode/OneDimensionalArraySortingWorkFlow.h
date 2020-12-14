@@ -40,15 +40,25 @@ public:
         OneDimensionalArrayType<Type> Result = Array;
 
         for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray() - 1; ++iterator)
-            for (int jiterator = iterator + 1; jiterator < Array.GetLengthOfOneDimensionalArray(); ++jiterator)
-                if (Array.GetOneDimensionalArray()[iterator] > Array.GetOneDimensionalArray()[jiterator])
-                    InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[jiterator]);
+            for (int jiterator = 0; jiterator < Array.GetLengthOfOneDimensionalArray() - iterator - 1; ++jiterator)
+                if (Array.GetOneDimensionalArray()[jiterator] > Array.GetOneDimensionalArray()[jiterator + 1])
+                    InterchangeValues(&Array.GetOneDimensionalArray()[jiterator], &Array.GetOneDimensionalArray()[jiterator + 1]);
 
         return Result;
     }
 
     OneDimensionalArrayType<Type> MinimumValueSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
+        assert(Array.GetLengthOfOneDimensionalArray() > 0);
+
+        OneDimensionalArrayType<Type> Result = Array;
+
+        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray() - 1; ++iterator)
+            for (int jiterator = iterator + 1; jiterator < Array.GetLengthOfOneDimensionalArray(); ++jiterator)
+                if (Array.GetOneDimensionalArray()[iterator] > Array.GetOneDimensionalArray()[jiterator])
+                    InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[jiterator]);
+
+        return Result;
     }
 
     OneDimensionalArrayType<Type> InsertionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
@@ -57,6 +67,16 @@ public:
 
     OneDimensionalArrayType<Type> SelectionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
+        assert(Array.GetLengthOfOneDimensionalArray() > 0);
+
+        OneDimensionalArrayType<Type> Result = Array;
+
+        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+            for (int jiterator = iterator + 1; jiterator < Array.GetLengthOfOneDimensionalArray(); ++jiterator)
+                if (Array.GetOneDimensionalArray()[iterator] > Array.GetOneDimensionalArray()[jiterator])
+                    InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[jiterator]);
+
+        return Result;
     }
 
     OneDimensionalArrayType<Type> ShellSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
