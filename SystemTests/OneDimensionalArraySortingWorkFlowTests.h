@@ -18,7 +18,7 @@ private:
         int primitiveArray[4] = { 12, -213, 432, -6456 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->BubbleSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->BubbleSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(4);
@@ -35,7 +35,7 @@ private:
         int primitiveArray[7] = { 7, 6, 5, 4, 3, 2, 1 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->BubbleSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->BubbleSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(7);
@@ -52,7 +52,7 @@ private:
         int primitiveArray[4] = { 0, 0, 0, -1 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->BubbleSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->BubbleSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(4);
@@ -69,7 +69,7 @@ private:
         int primitiveArray[7] = { -7, -6, -5, -4, -3, -2, -1 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->MinimumValueSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->MinimumValueSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(7);
@@ -86,7 +86,7 @@ private:
         int primitiveArray[10] = { 7334, 6226, 4710, 42, 6953, 8079, -7317, 8688, 7975, 2105 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->MinimumValueSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->MinimumValueSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(10);
@@ -103,7 +103,7 @@ private:
         int primitiveArray[20] = { 7300, -3516, -2677, 359, 3333, 9427, 4058, -1976, -9800, 7399, -2931, -248, -8500, 5616, 8287, -5138, -5245, 5162, 134, 8427 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->MinimumValueSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->MinimumValueSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(20);
@@ -120,7 +120,7 @@ private:
         int primitiveArray[20] = { -23, 138, 101, 119, -50, -50, 143, -150, 19, -8, -59, 91, -57, -100, 13, 96, 31, 62, 40, 21 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->SelectionSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->SelectionSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(20);
@@ -137,7 +137,7 @@ private:
         int primitiveArray[5] = { -7114, -2703, 1851, 2523, 14291 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->SelectionSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->SelectionSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(5);
@@ -154,7 +154,7 @@ private:
         int primitiveArray[7] = { 9710, -14742, -13967, -12403, 6024, 10904, 7733 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->SelectionSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->SelectionSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(7);
@@ -171,7 +171,7 @@ private:
         int primitiveArray[25] = { 11405, -2030, -13486, 10167, 7614, -5021, -5762, 4242, 4552, -448, -1413, 14589, -10984, 12251, -4663, 9062, 12086, -6067, 2643, 10735, -12253, -14064, -4377, -12317, -2556 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(25);
@@ -188,7 +188,7 @@ private:
         int primitiveArray[12] = { 5, 14, 10, 15, 1, -4, 0, 4, -7, 12, 9, -15 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(12);
@@ -205,7 +205,7 @@ private:
         int primitiveArray[7] = { -370, -805, -942, -271, -772, -403, -936 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(7);
@@ -222,7 +222,7 @@ private:
         int primitiveArray[15] = { 352, -3514, -7692, -1790, -1910, -2367, -4410, 2065, 997, -4392, 7949, 5570, -5547, 1697, -2301 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(15);
@@ -239,7 +239,7 @@ private:
         int primitiveArray[25] = { -974, -942, -4, -332, -912, -374, -277, -196, -782, -342, -629, -185, -134, -794, -836, -728, -180, -44, -23, -231, -583, -10, -104, -175, -171 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(25);
@@ -256,7 +256,7 @@ private:
         int primitiveArray[5] = { 1948, 4364, 2861, 9108, 5134 };
         Array.SetOneDimensionalArray(primitiveArray);
 
-        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
+        OneDimensionalArrayType<int> SortedResultArray = this->ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(5);

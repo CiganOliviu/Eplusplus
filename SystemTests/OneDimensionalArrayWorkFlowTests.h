@@ -539,7 +539,7 @@ private:
         int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(5);
@@ -561,7 +561,7 @@ private:
         int secondPrimitiveArray[3] = { -2, 5, -6 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(3);
@@ -584,7 +584,7 @@ private:
         int secondPrimitiveArray[4] = { -12, 213, -432, 6456 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetSumOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(4);
@@ -606,7 +606,7 @@ private:
         int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(5);
@@ -628,7 +628,7 @@ private:
         int secondPrimitiveArray[3] = { -2, 5, -6 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(3);
@@ -650,7 +650,7 @@ private:
         int secondPrimitiveArray[4] = { -12, 213, -432, 6456 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetSubtractionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(4);
@@ -672,7 +672,7 @@ private:
         int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(5);
@@ -694,7 +694,7 @@ private:
         int secondPrimitiveArray[3] = { -2, 5, -6 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(3);
@@ -703,7 +703,6 @@ private:
 
         this->Tests->AssertOneDimensionalArrayObjects(ResultArray, FunctionResultArray);
     }
-
 
     void TestCaseThree_GetDivisionOfOneDimensionalArrayObjects_() {
 
@@ -717,7 +716,7 @@ private:
         int secondPrimitiveArray[4] = { 2, 3, 4, 5 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetDivisionOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(4);
@@ -739,7 +738,7 @@ private:
         int secondPrimitiveArray[5] = { 1, 2, 3, 4, 5 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(5);
@@ -761,7 +760,7 @@ private:
         int secondPrimitiveArray[3] = { -2, 5, -6 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(3);
@@ -784,7 +783,7 @@ private:
         int secondPrimitiveArray[4] = { 2, 3, 4, 5 };
         SecondArray.SetOneDimensionalArray(secondPrimitiveArray);
 
-        OneDimensionalArrayType<int> FunctionResultArray = ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
+        OneDimensionalArrayType<int> FunctionResultArray = this->ArrayWorkFlow->GetProductOfOneDimensionalArrayObjects(FirstArray, SecondArray);
 
         OneDimensionalArrayType<int> ResultArray;
         ResultArray.SetLengthOfOneDimensionalArray(4);

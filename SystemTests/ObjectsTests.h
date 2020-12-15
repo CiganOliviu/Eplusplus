@@ -37,7 +37,7 @@ public:
         Array.SetLengthOfOneDimensionalArray(5);
         Array.SetOneDimensionalArray(primitiveArray);
 
-        Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
+        this->Tests->AssertOneDimensionalArrayObjectWithPrimitive(Array, primitiveArray);
     }
 
     ~TestsOneDimensionalArrayObject() = default;
@@ -81,7 +81,7 @@ public:
         Array.SetColumnOfMatrix(3);
         Array.SetMatrix(primitiveMatrix);
 
-        Tests->AssertMatrixObjectWithPrimitive(Array, primitiveMatrix);
+        this->Tests->AssertMatrixObjectWithPrimitive(Array, primitiveMatrix);
     }
 
     ~TestsMatrixObject() = default;

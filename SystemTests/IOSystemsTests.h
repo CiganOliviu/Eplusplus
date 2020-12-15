@@ -27,29 +27,29 @@ public:
 
         OneDimensionalArrayType<Type> Array;
 
-        Array = IOSys->ReadOneDimensionalArray(5);
+        Array = this->IOSys->ReadOneDimensionalArray(5);
 
-        IOSys->OutputOneDimensionalArray(Array);
+        this->IOSys->OutputOneDimensionalArray(Array);
         NEWLINE();
-        IOSys->OutputOneDimensionalArrayWithLength(Array);
+        this->IOSys->OutputOneDimensionalArrayWithLength(Array);
     }
 
     void Test_ReadAndOutputOneDimensionalArrayWithGivenLength_() {
 
         OneDimensionalArrayType<Type> Array;
 
-        Array = IOSys->ReadOneDimensionalArrayFromFileWithGivenLength(STDIN_FILE_WITH_LENGTH);
+        Array = this->IOSys->ReadOneDimensionalArrayFromFileWithGivenLength(STDIN_FILE_WITH_LENGTH);
 
-        IOSys->OutputOneDimensionalArrayInFileWithLength(Array, STDOUT_FILE_WITH_LENGTH);
+        this->IOSys->OutputOneDimensionalArrayInFileWithLength(Array, STDOUT_FILE_WITH_LENGTH);
     }
 
     void Test_ReadAndOutputOneDimensionalArrayFromFile_() {
 
         OneDimensionalArrayType<Type> Array;
 
-        Array = IOSys->ReadOneDimensionalArrayFromFile(STDIN_FILE_WITHOUT_LENGTH);
+        Array = this->IOSys->ReadOneDimensionalArrayFromFile(STDIN_FILE_WITHOUT_LENGTH);
 
-        IOSys->OutputOneDimensionalArrayInFile(Array, STDOUT_FILE_WITHOUT_LENGTH);
+        this->IOSys->OutputOneDimensionalArrayInFile(Array, STDOUT_FILE_WITHOUT_LENGTH);
     }
 
     ~TestsIOSystemsOneDimensionalArrayObject() = default;

@@ -56,7 +56,7 @@ public:
         for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray() - 1; ++iterator)
             for (int jiterator = 0; jiterator < Array.GetLengthOfOneDimensionalArray() - iterator - 1; ++jiterator)
                 if (Array.GetOneDimensionalArray()[jiterator] > Array.GetOneDimensionalArray()[jiterator + 1])
-                    InterchangeValues(&Array.GetOneDimensionalArray()[jiterator], &Array.GetOneDimensionalArray()[jiterator + 1]);
+                    this->InterchangeValues(&Array.GetOneDimensionalArray()[jiterator], &Array.GetOneDimensionalArray()[jiterator + 1]);
 
         return Result;
     }
@@ -70,7 +70,7 @@ public:
         for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray() - 1; ++iterator)
             for (int jiterator = iterator + 1; jiterator < Array.GetLengthOfOneDimensionalArray(); ++jiterator)
                 if (Array.GetOneDimensionalArray()[iterator] > Array.GetOneDimensionalArray()[jiterator])
-                    InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[jiterator]);
+                    this->InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[jiterator]);
 
         return Result;
     }
@@ -88,7 +88,7 @@ public:
             intermediate = Result.GetOneDimensionalArray()[iterator];
             jiterator = iterator - 1;
 
-            StartInterchangingValues(jiterator, intermediate, Array);
+            this->StartInterchangingValues(jiterator, intermediate, Array);
 
             Result.GetOneDimensionalArray()[jiterator + 1] = intermediate;
         }
@@ -105,7 +105,7 @@ public:
         for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
             for (int jiterator = iterator + 1; jiterator < Array.GetLengthOfOneDimensionalArray(); ++jiterator)
                 if (Array.GetOneDimensionalArray()[iterator] > Array.GetOneDimensionalArray()[jiterator])
-                    InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[jiterator]);
+                    this->InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[jiterator]);
 
         return Result;
     }
