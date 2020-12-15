@@ -44,6 +44,18 @@ private:
         }
     }
 
+    void ProcessInterchangeIfPossible(int iterator, Type step, OneDimensionalArrayType<Type> Array) {
+
+        while (iterator >= 0) {
+
+            if (Array.GetOneDimensionalArray()[iterator] > Array.GetOneDimensionalArray()[iterator + step]) {
+                this->InterchangeValues(&Array.GetOneDimensionalArray()[iterator], &Array.GetOneDimensionalArray()[iterator + step]);
+                iterator -= step;
+
+            } else iterator -= 1;
+        }
+    }
+
 public:
     OneDimensionalArraySortingWorkFlow() = default;
 
@@ -125,14 +137,7 @@ public:
             for (int iterator = step; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator) {
                 jiterator = iterator - step;
 
-                while (jiterator >= 0) {
-
-                    if (Result.GetOneDimensionalArray()[jiterator] > Result.GetOneDimensionalArray()[jiterator + step]) {
-                        this->InterchangeValues(&Result.GetOneDimensionalArray()[jiterator], &Result.GetOneDimensionalArray()[jiterator + step]);
-                        jiterator -= step;
-
-                    } else jiterator -= 1;
-                }
+                ProcessInterchangeIfPossible(jiterator, step, Result);
             }
             step /= 2;
         }
