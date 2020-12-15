@@ -60,6 +60,8 @@ void RunOneDimensionalArraySortingWorkFlowTests() {
     ArraySortTests.Test_BubbleSortOneDimensionalArray_();
     ArraySortTests.Test_MinimumValueSortOneDimensionalArray_();
     ArraySortTests.Test_SelectionSortOneDimensionalArray_();
+    ArraySortTests.Test_InsertionSortOneDimensionalArray_();
+    ArraySortTests.Test_ShellSortOneDimensionalArray_();
 }
 
 int main() {

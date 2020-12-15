@@ -164,6 +164,108 @@ private:
         this->Tests->AssertOneDimensionalArrayObjects(ResultArray, SortedResultArray);
     }
 
+    void TestCaseOne_InsertionSortOneDimensionalArray_() {
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(25);
+        int primitiveArray[25] = { 11405, -2030, -13486, 10167, 7614, -5021, -5762, 4242, 4552, -448, -1413, 14589, -10984, 12251, -4663, 9062, 12086, -6067, 2643, 10735, -12253, -14064, -4377, -12317, -2556 };
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(25);
+        int resultPrimitiveArray[25] = { -14064, -13486, -12317, -12253, -10984, -6067, -5762, -5021, -4663, -4377, -2556, -2030, -1413, -448, 2643, 4242, 4552, 7614, 9062, 10167, 10735, 11405, 12086, 12251, 14589 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, SortedResultArray);
+    }
+
+    void TestCaseTwo_InsertionSortOneDimensionalArray_() {
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(12);
+        int primitiveArray[12] = { 5, 14, 10, 15, 1, -4, 0, 4, -7, 12, 9, -15 };
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(12);
+        int resultPrimitiveArray[12] = { -15, -7, -4, 0, 1, 4, 5, 9, 10, 12, 14, 15 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, SortedResultArray);
+    }
+
+    void TestCaseThree_InsertionSortOneDimensionalArray_() {
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(7);
+        int primitiveArray[7] = { -370, -805, -942, -271, -772, -403, -936 };
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->InsertionSortOneDimensionalArray(Array);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(7);
+        int resultPrimitiveArray[7] = { -942, -936, -805, -772, -403, -370, -271 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, SortedResultArray);
+    }
+
+    void TestCaseOne_ShellSortOneDimensionalArray_() {
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(15);
+        int primitiveArray[15] = { 352, -3514, -7692, -1790, -1910, -2367, -4410, 2065, 997, -4392, 7949, 5570, -5547, 1697, -2301 };
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(15);
+        int resultPrimitiveArray[15] = { -7692, -5547, -4410, -4392, -3514, -2367, -2301, -1910, -1790, 352, 997, 1697, 2065, 5570, 7949 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, SortedResultArray);
+    }
+
+    void TestCaseTwo_ShellSortOneDimensionalArray_() {
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(25);
+        int primitiveArray[25] = { -974, -942, -4, -332, -912, -374, -277, -196, -782, -342, -629, -185, -134, -794, -836, -728, -180, -44, -23, -231, -583, -10, -104, -175, -171 };
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(25);
+        int resultPrimitiveArray[25] = { -974, -942, -912, -836, -794, -782, -728, -629, -583, -374, -342, -332, -277, -231, -196, -185, -180, -175, -171, -134, -104, -44, -23, -10, -4 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, SortedResultArray);
+    }
+
+    void TestCaseThree_ShellSortOneDimensionalArray_() {
+
+        OneDimensionalArrayType<int> Array;
+        Array.SetLengthOfOneDimensionalArray(5);
+        int primitiveArray[5] = { 1948, 4364, 2861, 9108, 5134 };
+        Array.SetOneDimensionalArray(primitiveArray);
+
+        OneDimensionalArrayType<int> SortedResultArray = ArraySortingWorkFlow->ShellSortOneDimensionalArray(Array);
+
+        OneDimensionalArrayType<int> ResultArray;
+        ResultArray.SetLengthOfOneDimensionalArray(5);
+        int resultPrimitiveArray[5] = { 1948, 2861, 4364, 5134, 9108 };
+        ResultArray.SetOneDimensionalArray(resultPrimitiveArray);
+
+        this->Tests->AssertOneDimensionalArrayObjects(ResultArray, SortedResultArray);
+    }
+
     std::shared_ptr<AbstractOneDimensionalArraySortingWorkFlowObject<Type>> ArraySortingWorkFlow;
     std::shared_ptr<AbstractTestsSupportObject<Type>> Tests;
 
@@ -193,6 +295,20 @@ public:
         this->TestCaseOne_SelectionSortOneDimensionalArray_();
         this->TestCaseTwo_SelectionSortOneDimensionalArray_();
         this->TestCaseThree_SelectionSortOneDimensionalArray_();
+    }
+
+    void Test_InsertionSortOneDimensionalArray_() {
+
+        this->TestCaseOne_InsertionSortOneDimensionalArray_();
+        this->TestCaseTwo_InsertionSortOneDimensionalArray_();
+        this->TestCaseThree_InsertionSortOneDimensionalArray_();
+    }
+
+    void Test_ShellSortOneDimensionalArray_() {
+
+        this->TestCaseOne_ShellSortOneDimensionalArray_();
+        this->TestCaseTwo_ShellSortOneDimensionalArray_();
+        this->TestCaseThree_ShellSortOneDimensionalArray_();
     }
 
     ~TestsOneDimensionalArraySortingWorkFlowObject() = default;

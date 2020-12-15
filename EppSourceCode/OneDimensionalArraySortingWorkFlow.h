@@ -63,6 +63,27 @@ public:
 
     OneDimensionalArrayType<Type> InsertionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
+        assert(Array.GetLengthOfOneDimensionalArray() > 0);
+
+        OneDimensionalArrayType<Type> Result = Array;
+        Type auxiliar;
+        int jiterator;
+
+        for (int iterator = 1; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator) {
+
+            auxiliar = Result.GetOneDimensionalArray()[iterator];
+            jiterator = iterator - 1;
+
+            while (jiterator >= 0 && Result.GetOneDimensionalArray()[jiterator] > auxiliar) {
+
+                Result.GetOneDimensionalArray()[jiterator + 1] = Result.GetOneDimensionalArray()[jiterator];
+                jiterator -= 1;
+            }
+
+            Result.GetOneDimensionalArray()[jiterator + 1] = auxiliar;
+        }
+
+        return Result;
     }
 
     OneDimensionalArrayType<Type> SelectionSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
@@ -81,6 +102,32 @@ public:
 
     OneDimensionalArrayType<Type> ShellSortOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
 
+        assert(Array.GetOneDimensionalArray() > 0);
+
+        OneDimensionalArrayType<Type> Result = Array;
+        Type step;
+        int jiterator;
+
+        step = Result.GetLengthOfOneDimensionalArray() / 2;
+
+        while (step > 0) {
+
+            for (int iterator = step; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator) {
+                jiterator = iterator - step;
+
+                while (jiterator >= 0) {
+
+                    if (Result.GetOneDimensionalArray()[jiterator] > Result.GetOneDimensionalArray()[jiterator + step]) {
+                        this->InterchangeValues(&Result.GetOneDimensionalArray()[jiterator], &Result.GetOneDimensionalArray()[jiterator + step]);
+                        jiterator -= step;
+
+                    } else jiterator -= 1;
+                }
+            }
+            step /= 2;
+        }
+
+        return Result;
     }
 
     ~OneDimensionalArraySortingWorkFlow() = default;
