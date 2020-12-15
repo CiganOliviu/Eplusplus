@@ -30,6 +30,20 @@ private:
         * FirstParameter = * FirstParameter - * SecondParameter;
     }
 
+    bool IsIndexBiggerThanZeroAndArrayBiggerThanIntermediate(int iterator, Type intermediate, OneDimensionalArrayType<Type> Array) {
+
+        return iterator >= 0 && Array.GetOneDimensionalArray()[iterator] > intermediate;
+    }
+
+    void StartInterchangingValues(int & iterator, Type intermediate, OneDimensionalArrayType<Type> Array) {
+
+        while (this->IsIndexBiggerThanZeroAndArrayBiggerThanIntermediate(iterator, intermediate, Array)) {
+
+            Array.GetOneDimensionalArray()[iterator + 1] = Array.GetOneDimensionalArray()[iterator];
+            iterator -= 1;
+        }
+    }
+
 public:
     OneDimensionalArraySortingWorkFlow() = default;
 
@@ -66,21 +80,17 @@ public:
         assert(Array.GetLengthOfOneDimensionalArray() > 0);
 
         OneDimensionalArrayType<Type> Result = Array;
-        Type auxiliar;
+        Type intermediate;
         int jiterator;
 
         for (int iterator = 1; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator) {
 
-            auxiliar = Result.GetOneDimensionalArray()[iterator];
+            intermediate = Result.GetOneDimensionalArray()[iterator];
             jiterator = iterator - 1;
 
-            while (jiterator >= 0 && Result.GetOneDimensionalArray()[jiterator] > auxiliar) {
+            StartInterchangingValues(jiterator, intermediate, Array);
 
-                Result.GetOneDimensionalArray()[jiterator + 1] = Result.GetOneDimensionalArray()[jiterator];
-                jiterator -= 1;
-            }
-
-            Result.GetOneDimensionalArray()[jiterator + 1] = auxiliar;
+            Result.GetOneDimensionalArray()[jiterator + 1] = intermediate;
         }
 
         return Result;
