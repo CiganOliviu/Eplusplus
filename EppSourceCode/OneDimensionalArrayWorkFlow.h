@@ -73,251 +73,270 @@ private:
 public:
     OneDimensionalArrayWorkFlow() = default;
 
-    Type GetMinimumValueFromOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        Type result = Array.GetOneDimensionalArray()[0];
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            result = result > Array.GetOneDimensionalArray()[iterator] ? Array.GetOneDimensionalArray()[iterator] : result;
-
-        return result;
-    }
-
-    Type GetMaximumValueFromOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        Type result = Array.GetOneDimensionalArray()[0];
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            result = result < Array.GetOneDimensionalArray()[iterator] ? Array.GetOneDimensionalArray()[iterator] : result;
-
-        return result;
-    }
-
-    Type GetElementsSumOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        Type result = 0;
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            result += Array.GetOneDimensionalArray()[iterator];
-
-        return result;
-    }
-
-    Type GetElementsProductOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        Type result = 1;
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            result *= Array.GetOneDimensionalArray()[iterator];
-
-        return result;
-    }
-
-    Type GetElementsSubtractionOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        Type result = Array.GetOneDimensionalArray()[0];
-
-        for (int iterator = 1; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            result -= Array.GetOneDimensionalArray()[iterator];
-
-        return result;
-    }
-
-    Type GetElementsDivisionOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        this->CheckIfElementsOfArrayAreDifferentThanZero(Array);
-
-        Type result = Array.GetOneDimensionalArray()[0];
-
-        for (int iterator = 1; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            result /= Array.GetOneDimensionalArray()[iterator];
-
-        return result;
-    }
-
-    Type GetElementsMeanOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) override {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        this->CheckIfElementsOfArrayAreDifferentThanZero(Array);
-
-        Type result = 0;
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            result += Array.GetOneDimensionalArray()[iterator];
-
-        result /= Array.GetLengthOfOneDimensionalArray();
-
-        return result;
-    }
-
-    OneDimensionalArrayType<Type> InitialiseOneDimensionalArray(unsigned int length, Type initializer) override {
-
-        assert(length >= 0);
-
-        OneDimensionalArrayType<Type> Array;
-
-        Array.SetLengthOfOneDimensionalArray(length);
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            Array.GetOneDimensionalArray()[iterator] = initializer;
-
-        return Array;
-    }
-
-    OneDimensionalArrayType<Type> PushBackValueInOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type ValueToAdd) override {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        OneDimensionalArrayType<Type> ResultArray = Array;
-
-        unsigned int ExtendedLength = ResultArray.GetLengthOfOneDimensionalArray() + 1;
-        unsigned int Index = ExtendedLength - 1;
-
-        ResultArray.GetOneDimensionalArray()[Index] = ValueToAdd;
-
-        return ResultArray;
-    }
-
-    bool IsValueInOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type ValueToSearch) override {
-        
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            if (Array.GetOneDimensionalArray()[iterator] == ValueToSearch)
-                return true;
-
-        return false;
-    }
-
-    OneDimensionalArrayType<Type> NormaliseOneDimensionalArray(unsigned int length) {
-
-        OneDimensionalArrayType<Type> Array;
-
-        Array.SetLengthOfOneDimensionalArray(length);
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            Array.GetOneDimensionalArray()[iterator] = 0;
-
-        return Array;
-    }
-
-    OneDimensionalArrayType<Type> ConvertNumberToOneDimensionalArray(unsigned int numberToConvert) override {
-
-        OneDimensionalArrayType<Type> Array;
-        Array.SetLengthOfOneDimensionalArray(this->GetLengthOfNumber(numberToConvert));
-
-        numberToConvert = this->ReverseNumber(numberToConvert);
-
-        unsigned int iterator = 0;
-
-        while (numberToConvert > 0) {
-
-            unsigned int Digit = numberToConvert % 10;
-
-            Array.GetOneDimensionalArray()[iterator] = Digit;
-            iterator += 1;
-
-            numberToConvert /= 10;
-        }
-
-        return Array;
-    }
-
-    OneDimensionalArrayType<Type> BoostUpOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type factor) override {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            Array.GetOneDimensionalArray()[iterator] *= factor;
-
-        return Array;
-    }
-
-    OneDimensionalArrayType<Type> BoostDownOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type factor) override {
-
-        assert(Array.GetLengthOfOneDimensionalArray() >= 0);
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            Array.GetOneDimensionalArray()[iterator] /= factor;
-
-        return Array;
-    }
-
-    OneDimensionalArrayType<Type> GetSumOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override {
-
-        assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
-
-        OneDimensionalArrayType<Type> Result;
-        Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
-
-        for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
-            Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] + SecondArray.GetOneDimensionalArray()[iterator];
-
-        return Result;
-    }
-
-    OneDimensionalArrayType<Type> GetSubtractionOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override {
-
-        assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
-
-        OneDimensionalArrayType<Type> Result;
-        Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
-
-        for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
-            Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] - SecondArray.GetOneDimensionalArray()[iterator];
-
-        return Result;
-    }
-
-    OneDimensionalArrayType<Type> GetDivisionOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override {
-
-        assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
-
-        OneDimensionalArrayType<Type> Result;
-        Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
-
-        for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
-            Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] / SecondArray.GetOneDimensionalArray()[iterator];
-
-        return Result;
-    }
-
-    OneDimensionalArrayType<Type> GetProductOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override {
-
-        assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
-        assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
-
-        OneDimensionalArrayType<Type> Result;
-        Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
-
-        for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
-            Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] * SecondArray.GetOneDimensionalArray()[iterator];
-
-        return Result;
-    }
+    Type GetMinimumValueFromOneDimensionalArray(OneDimensionalArrayType<Type> Array) override;
+    Type GetMaximumValueFromOneDimensionalArray(OneDimensionalArrayType<Type> Array) override;
+    Type GetElementsSumOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) override;
+    Type GetElementsProductOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) override;
+    Type GetElementsSubtractionOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) override;
+    Type GetElementsDivisionOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) override;
+    Type GetElementsMeanOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) override;
+    OneDimensionalArrayType<Type> InitialiseOneDimensionalArray(unsigned int length, Type initializer) override;
+    OneDimensionalArrayType<Type> PushBackValueInOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type ValueToAdd) override;
+    bool IsValueInOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type ValueToSearch) override;
+    OneDimensionalArrayType<Type> NormaliseOneDimensionalArray(unsigned int length) override;
+    OneDimensionalArrayType<Type> ConvertNumberToOneDimensionalArray(unsigned int numberToConvert) override;
+    OneDimensionalArrayType<Type> BoostUpOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type factor) override;
+    OneDimensionalArrayType<Type> BoostDownOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type factor) override;
+    OneDimensionalArrayType<Type> GetSumOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override;
+    OneDimensionalArrayType<Type> GetSubtractionOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override;
+    OneDimensionalArrayType<Type> GetDivisionOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override;
+    OneDimensionalArrayType<Type> GetProductOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) override;
 
     ~OneDimensionalArrayWorkFlow() = default;
 };
+
+template <class Type> Type OneDimensionalArrayWorkFlow<Type>::GetMinimumValueFromOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    Type result = Array.GetOneDimensionalArray()[0];
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        result = result > Array.GetOneDimensionalArray()[iterator] ? Array.GetOneDimensionalArray()[iterator] : result;
+
+    return result;
+}
+
+template <class Type> Type OneDimensionalArrayWorkFlow<Type>::GetMaximumValueFromOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    Type result = Array.GetOneDimensionalArray()[0];
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        result = result < Array.GetOneDimensionalArray()[iterator] ? Array.GetOneDimensionalArray()[iterator] : result;
+
+    return result;
+}
+
+template <class Type> Type OneDimensionalArrayWorkFlow<Type>:: GetElementsSumOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    Type result = 0;
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        result += Array.GetOneDimensionalArray()[iterator];
+
+    return result;
+}
+
+template <class Type> Type OneDimensionalArrayWorkFlow<Type>:: GetElementsProductOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    Type result = 1;
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        result *= Array.GetOneDimensionalArray()[iterator];
+
+    return result;
+}
+
+template <class Type> Type OneDimensionalArrayWorkFlow<Type>:: GetElementsSubtractionOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    Type result = Array.GetOneDimensionalArray()[0];
+
+    for (int iterator = 1; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        result -= Array.GetOneDimensionalArray()[iterator];
+
+    return result;
+}
+
+template <class Type> Type OneDimensionalArrayWorkFlow<Type>:: GetElementsDivisionOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    this->CheckIfElementsOfArrayAreDifferentThanZero(Array);
+
+    Type result = Array.GetOneDimensionalArray()[0];
+
+    for (int iterator = 1; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        result /= Array.GetOneDimensionalArray()[iterator];
+
+    return result;
+}
+
+template <class Type> Type OneDimensionalArrayWorkFlow<Type>:: GetElementsMeanOfOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    this->CheckIfElementsOfArrayAreDifferentThanZero(Array);
+
+    Type result = 0;
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        result += Array.GetOneDimensionalArray()[iterator];
+
+    result /= Array.GetLengthOfOneDimensionalArray();
+
+    return result;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::InitialiseOneDimensionalArray(unsigned int length, Type initializer) {
+
+    assert(length >= 0);
+
+    OneDimensionalArrayType<Type> Array;
+
+    Array.SetLengthOfOneDimensionalArray(length);
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        Array.GetOneDimensionalArray()[iterator] = initializer;
+
+    return Array;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::PushBackValueInOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type ValueToAdd) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    OneDimensionalArrayType<Type> ResultArray = Array;
+
+    unsigned int ExtendedLength = ResultArray.GetLengthOfOneDimensionalArray() + 1;
+    unsigned int Index = ExtendedLength - 1;
+
+    ResultArray.GetOneDimensionalArray()[Index] = ValueToAdd;
+
+    return ResultArray;
+}
+
+template <class Type> bool OneDimensionalArrayWorkFlow<Type>::IsValueInOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type ValueToSearch) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        if (Array.GetOneDimensionalArray()[iterator] == ValueToSearch)
+            return true;
+
+    return false;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::NormaliseOneDimensionalArray(unsigned int length) {
+
+    OneDimensionalArrayType<Type> Array;
+
+    Array.SetLengthOfOneDimensionalArray(length);
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        Array.GetOneDimensionalArray()[iterator] = 0;
+
+    return Array;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::ConvertNumberToOneDimensionalArray(unsigned int numberToConvert) {
+
+    OneDimensionalArrayType<Type> Array;
+    Array.SetLengthOfOneDimensionalArray(this->GetLengthOfNumber(numberToConvert));
+
+    numberToConvert = this->ReverseNumber(numberToConvert);
+
+    unsigned int iterator = 0;
+
+    while (numberToConvert > 0) {
+
+        unsigned int Digit = numberToConvert % 10;
+
+        Array.GetOneDimensionalArray()[iterator] = Digit;
+        iterator += 1;
+
+        numberToConvert /= 10;
+    }
+
+    return Array;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::BoostUpOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type factor) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        Array.GetOneDimensionalArray()[iterator] *= factor;
+
+    return Array;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::BoostDownOneDimensionalArray(OneDimensionalArrayType<Type> Array, Type factor) {
+
+    assert(Array.GetLengthOfOneDimensionalArray() >= 0);
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        Array.GetOneDimensionalArray()[iterator] /= factor;
+
+    return Array;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::GetSumOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) {
+
+    assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
+
+    OneDimensionalArrayType<Type> Result;
+    Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
+
+    for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
+        Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] + SecondArray.GetOneDimensionalArray()[iterator];
+
+    return Result;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::GetSubtractionOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) {
+
+    assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
+
+    OneDimensionalArrayType<Type> Result;
+    Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
+
+    for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
+        Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] - SecondArray.GetOneDimensionalArray()[iterator];
+
+    return Result;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::GetDivisionOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) {
+
+    assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
+
+    OneDimensionalArrayType<Type> Result;
+    Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
+
+    for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
+        Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] / SecondArray.GetOneDimensionalArray()[iterator];
+
+    return Result;
+}
+
+template <class Type> OneDimensionalArrayType<Type> OneDimensionalArrayWorkFlow<Type>::GetProductOfOneDimensionalArrayObjects(OneDimensionalArrayType<Type> FirstArray, OneDimensionalArrayType<Type> SecondArray) {
+
+    assert(FirstArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(SecondArray.GetLengthOfOneDimensionalArray() > 0);
+    assert(FirstArray.GetLengthOfOneDimensionalArray() == SecondArray.GetLengthOfOneDimensionalArray());
+
+    OneDimensionalArrayType<Type> Result;
+    Result.SetLengthOfOneDimensionalArray(FirstArray.GetLengthOfOneDimensionalArray());
+
+    for (int iterator = 0; iterator < Result.GetLengthOfOneDimensionalArray(); ++iterator)
+        Result.GetOneDimensionalArray()[iterator] = FirstArray.GetOneDimensionalArray()[iterator] * SecondArray.GetOneDimensionalArray()[iterator];
+
+    return Result;
+}
 
 template <class Type> class OneDimensionalArrayWorkFlowFactoryObject {
 

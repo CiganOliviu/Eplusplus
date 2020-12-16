@@ -86,7 +86,7 @@ int main() {
 
     RunObjectsTests();
     // This suit of tests require console input, run it AFTER YOU READ THE CODE FROM IT! Delete this comment if out of date.
-    RunIOTests();
+    // RunIOTests();
     RunOneDimensionalArrayWorkFlowTests();
     RunOneDimensionalArraySortingWorkFlowTests();
     RunFundamentalAlgorithmsTests();
