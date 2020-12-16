@@ -13,11 +13,11 @@ template <class Type> class AbstractOneDimensionalArrayObject {
 public:
     AbstractOneDimensionalArrayObject() = default;
 
-    virtual unsigned int GetLengthOfOneDimensionalArray() {}
-    virtual void SetLengthOfOneDimensionalArray(unsigned int length) {}
+    [[maybe_unused]] virtual unsigned int GetLengthOfOneDimensionalArray() {}
+    [[maybe_unused]] virtual void SetLengthOfOneDimensionalArray(unsigned int length) {}
 
-    virtual Type * GetOneDimensionalArray() {}
-    virtual void SetOneDimensionalArray(Type * Array) {}
+    [[maybe_unused]] virtual Type * GetOneDimensionalArray() {}
+    [[maybe_unused]] virtual void SetOneDimensionalArray(Type * Array) {}
 
     ~AbstractOneDimensionalArrayObject() = default;
 };
@@ -31,28 +31,34 @@ private:
 public:
     OneDimensionalArrayType() = default;
 
-    unsigned int GetLengthOfOneDimensionalArray() {
+    unsigned int GetLengthOfOneDimensionalArray() override;
+    void SetLengthOfOneDimensionalArray(unsigned int length) override;
 
-        return this->_length;
-    }
-
-    void SetLengthOfOneDimensionalArray(unsigned int length) {
-
-        this->_length = length;
-    }
-
-    Type * GetOneDimensionalArray() {
-
-        return this->OneDimensionalArray;
-    }
-
-    void SetOneDimensionalArray(Type * Array) {
-
-        this->OneDimensionalArray = Array;
-    }
+    Type * GetOneDimensionalArray() override;
+    void SetOneDimensionalArray(Type * Array) override;
 
     ~OneDimensionalArrayType() = default;
 };
+
+template <class Type> unsigned int OneDimensionalArrayType<Type>::GetLengthOfOneDimensionalArray() {
+
+    return this->_length;
+}
+
+template<class Type> void OneDimensionalArrayType<Type>::SetLengthOfOneDimensionalArray(unsigned int length) {
+
+    this->_length = length;
+}
+
+template<class Type> Type *OneDimensionalArrayType<Type>::GetOneDimensionalArray() {
+
+    return this->OneDimensionalArray;
+}
+
+template<class Type> void OneDimensionalArrayType<Type>::SetOneDimensionalArray(Type * Array) {
+
+    this->OneDimensionalArray = Array;
+}
 
 template <class Type> class OneDimensionalArrayTypeFactoryObject {
 

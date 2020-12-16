@@ -10,14 +10,14 @@ template <class Type> class AbstractMatrixTypeObject {
 public:
     AbstractMatrixTypeObject() = default;
 
-    virtual unsigned int GetLineOfMatrix() {};
-    virtual void SetLineOfMatrix(unsigned int line) {}
+    [[maybe_unused]] virtual unsigned int GetLineOfMatrix() {};
+    [[maybe_unused]] virtual void SetLineOfMatrix(unsigned int line) {}
 
-    virtual unsigned int GetColumnOfMatrix() {};
-    virtual void SetColumnOfMatrix(unsigned int column) {}
+    [[maybe_unused]] virtual unsigned int GetColumnOfMatrix() {};
+    [[maybe_unused]] virtual void SetColumnOfMatrix(unsigned int column) {}
 
-    virtual Type ** GetMatrix() {}
-    virtual void SetMatrix(Type Array[][STANDARD_LENGTH]) {}
+    [[maybe_unused]] virtual Type ** GetMatrix() {}
+    [[maybe_unused]] virtual void SetMatrix(Type Array[][STANDARD_LENGTH]) {}
 
     ~AbstractMatrixTypeObject() = default;
 };
@@ -38,39 +38,48 @@ public:
             this->Matrix[iterator] = (Type *) malloc(this->_line * sizeof(Type));
     }
 
-    unsigned int GetLineOfMatrix() override {
+    unsigned int GetLineOfMatrix() override;
+    void SetLineOfMatrix(unsigned int line) override;
 
-        return this->_line;
-    }
+    unsigned int GetColumnOfMatrix() override;
+    void SetColumnOfMatrix(unsigned int column) override;
 
-    void SetLineOfMatrix(unsigned int line) override {
-
-        this->_line = line;
-    }
-
-    unsigned int GetColumnOfMatrix() override {
-
-        return this->_column;
-    }
-
-    void SetColumnOfMatrix(unsigned int column) override {
-
-        this->_column = column;
-    }
-
-    Type ** GetMatrix() override {
-
-        return this->Matrix;
-    }
-
-    void SetMatrix(Type Array[][STANDARD_LENGTH]) override {
-
-        for (int iterator = 0; iterator < this->_line; ++iterator)
-            this->Matrix[iterator] = Array[iterator];
-    }
+    Type ** GetMatrix() override;
+    void SetMatrix(Type Array[][STANDARD_LENGTH]) override;
 
     ~MatrixType() = default;
 };
+
+template<class Type> unsigned int MatrixType<Type>::GetLineOfMatrix() {
+
+    return this->_line;
+}
+
+template<class Type> void MatrixType<Type>::SetLineOfMatrix(unsigned int line) {
+
+    this->_line = line;
+}
+
+template<class Type> unsigned int MatrixType<Type>::GetColumnOfMatrix() {
+
+    return this->_column;
+}
+
+template<class Type> void MatrixType<Type>::SetColumnOfMatrix(unsigned int column) {
+
+    this->_column = column;
+}
+
+template<class Type> Type ** MatrixType<Type>::GetMatrix() {
+
+    return this->Matrix;
+}
+
+template<class Type> void MatrixType<Type>::SetMatrix(Type Array[][STANDARD_LENGTH]) {
+
+    for (int iterator = 0; iterator < this->_line; ++iterator)
+        this->Matrix[iterator] = Array[iterator];
+}
 
 template <class Type> class MatrixTypeFactoryObject {
 
