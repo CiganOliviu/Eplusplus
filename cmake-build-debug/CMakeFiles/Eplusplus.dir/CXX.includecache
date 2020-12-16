@@ -14,6 +14,8 @@
 ../PreprocessorDirectives/DefinedDirectives.h
 /media/cigan/Personal/Projects/Eplusplus/PreprocessorDirectives/DefinedDirectives.h
 
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/FundamentalAlgorithms.h
+
 /media/cigan/Personal/Projects/Eplusplus/EppSourceCode/IOSystemsOneDimensionalArray.h
 ../DataStructures/OneDimensionalArray.h
 /media/cigan/Personal/Projects/Eplusplus/DataStructures/OneDimensionalArray.h
@@ -41,6 +43,10 @@ stdexcept
 -
 stdlib.h
 -
+
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/FundamentalAlgorithmsTests.h
+../EppSourceCode/FundamentalAlgorithms.h
+/media/cigan/Personal/Projects/Eplusplus/EppSourceCode/FundamentalAlgorithms.h
 
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/IOSystemsTests.h
 ../EppSourceCode/IOSystemsOneDimensionalArray.h
@@ -85,4 +91,6 @@ SystemTests/OneDimensionalArrayWorkFlowTests.h
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArrayWorkFlowTests.h
 SystemTests/OneDimensionalArraySortingWorkFlowTests.h
 /media/cigan/Personal/Projects/Eplusplus/SystemTests/OneDimensionalArraySortingWorkFlowTests.h
+SystemTests/FundamentalAlgorithmsTests.h
+/media/cigan/Personal/Projects/Eplusplus/SystemTests/FundamentalAlgorithmsTests.h
 

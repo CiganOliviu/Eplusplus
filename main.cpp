@@ -2,6 +2,7 @@
 #include "SystemTests/IOSystemsTests.h"
 #include "SystemTests/OneDimensionalArrayWorkFlowTests.h"
 #include "SystemTests/OneDimensionalArraySortingWorkFlowTests.h"
+#include "SystemTests/FundamentalAlgorithmsTests.h"
 
 void RunObjectsTests() {
 
@@ -64,6 +65,23 @@ void RunOneDimensionalArraySortingWorkFlowTests() {
     ArraySortTests.Test_ShellSortOneDimensionalArray_();
 }
 
+void RunFundamentalAlgorithmsTests() {
+
+    TestsFundamentalAlgorithmsObject AlgorithmsTests;
+
+    AlgorithmsTests.Test_GetGaussSum_();
+    AlgorithmsTests.Test_GetFactorialNumber_();
+    AlgorithmsTests.Test_GetFactorialNumberRecursive_();
+    AlgorithmsTests.Test_GetFibonacciNumberRecursive_();
+    AlgorithmsTests.Test_GetFibonacciNumber_();
+
+    AlgorithmsTests.Test_GetMannaPnueliNumber_();
+    AlgorithmsTests.Test_GetAckermanNumber_();
+    AlgorithmsTests.Test_GetEulerNumber_();
+    AlgorithmsTests.Test_GetCatalanNumber_();
+}
+
+
 int main() {
 
     RunObjectsTests();
@@ -71,6 +89,7 @@ int main() {
     // RunIOTests();
     RunOneDimensionalArrayWorkFlowTests();
     RunOneDimensionalArraySortingWorkFlowTests();
+    RunFundamentalAlgorithmsTests();
 
     return 0;
 }
