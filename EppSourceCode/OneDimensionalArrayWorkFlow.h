@@ -36,39 +36,9 @@ public:
 
 template <class Type> class OneDimensionalArrayWorkFlow : public AbstractOneDimensionalArrayWorkFlowObject<Type> {
 private:
-    void CheckIfElementsOfArrayAreDifferentThanZero(OneDimensionalArrayType<Type> Array) {
-
-        for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
-            assert(Array.GetOneDimensionalArray()[iterator] != 0);
-    }
-
-    unsigned int GetLengthOfNumber(unsigned int number) {
-
-        unsigned int iterator = 0;
-
-        while (number > 0) {
-
-            iterator += 1;
-            number /= 10;
-        }
-
-        return iterator;
-    }
-
-    unsigned int ReverseNumber(unsigned int number) {
-
-        unsigned int result = 0;
-
-        while (number > 0) {
-
-            int digit = number % 10;
-            result = result * 10 + digit;
-
-            number /= 10;
-        }
-
-        return result;
-    }
+    void CheckIfElementsOfArrayAreDifferentThanZero(OneDimensionalArrayType<Type> Array);
+    unsigned int GetLengthOfNumber(unsigned int number);
+    unsigned int ReverseNumber(unsigned int number);
 
 public:
     OneDimensionalArrayWorkFlow() = default;
@@ -94,6 +64,40 @@ public:
 
     ~OneDimensionalArrayWorkFlow() = default;
 };
+
+template <class Type> void OneDimensionalArrayWorkFlow<Type>::CheckIfElementsOfArrayAreDifferentThanZero(OneDimensionalArrayType<Type> Array) {
+
+    for (int iterator = 0; iterator < Array.GetLengthOfOneDimensionalArray(); ++iterator)
+        assert(Array.GetOneDimensionalArray()[iterator] != 0);
+}
+
+template <class Type> unsigned int OneDimensionalArrayWorkFlow<Type>::GetLengthOfNumber(unsigned int number) {
+
+    unsigned int iterator = 0;
+
+    while (number > 0) {
+
+        iterator += 1;
+        number /= 10;
+    }
+
+    return iterator;
+}
+
+template <class Type> unsigned int OneDimensionalArrayWorkFlow<Type>::ReverseNumber(unsigned int number) {
+
+    unsigned int result = 0;
+
+    while (number > 0) {
+
+        int digit = number % 10;
+        result = result * 10 + digit;
+
+        number /= 10;
+    }
+
+    return result;
+}
 
 template <class Type> Type OneDimensionalArrayWorkFlow<Type>::GetMinimumValueFromOneDimensionalArray(OneDimensionalArrayType<Type> Array) {
 
