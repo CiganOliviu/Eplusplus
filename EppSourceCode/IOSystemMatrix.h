@@ -28,9 +28,13 @@ template <class Type> class IOSystemMatrix : public AbstractIOSystemMatrixObject
 private:
     void CheckIfInputFileIsEmpty(std::ifstream &File);
     void CheckIfInputFileIsOpen(std::ifstream &File);
+    void CheckIfOutputFileIsOpen(std::ofstream &File);
     bool LineAndLengthArePositive(unsigned int line, unsigned int column) const;
     MatrixType<Type> GetMatrixFromStdin(unsigned int line, unsigned int column) const;
     void PutsMatrixInStdout(MatrixType<Type> Matrix) const;
+    int ReadFirstElementFromFile(std::ifstream &File) const;
+    MatrixType<Type> GetMatrixWithGivenLengthFromStdFileIn(std::ifstream &File, unsigned int line, unsigned int column) const;
+    void PutsMatrixInStdFileOut(std::ofstream &File, MatrixType<Type> Matrix);
 
 public:
     IOSystemMatrix() = default;
@@ -55,6 +59,12 @@ template<class Type> void IOSystemMatrix<Type>::CheckIfInputFileIsEmpty(std::ifs
 }
 
 template<class Type> void IOSystemMatrix<Type>::CheckIfInputFileIsOpen(std::ifstream &File) {
+
+    if (!File.is_open())
+        throw std::runtime_error("Unable to open file");
+}
+
+template<class Type> void IOSystemMatrix<Type>::CheckIfOutputFileIsOpen(std::ofstream &File) {
 
     if (!File.is_open())
         throw std::runtime_error("Unable to open file");
@@ -89,6 +99,39 @@ template<class Type> void IOSystemMatrix<Type>::PutsMatrixInStdout(MatrixType<Ty
     }
 }
 
+template<class Type> int IOSystemMatrix<Type>::ReadFirstElementFromFile(std::ifstream &File) const {
+
+    int firstElement;
+
+    File >> firstElement;
+
+    return firstElement;
+}
+
+template<class Type> MatrixType<Type> IOSystemMatrix<Type>::GetMatrixWithGivenLengthFromStdFileIn(std::ifstream &File, unsigned int line, unsigned int column) const {
+
+    MatrixType<Type> Matrix;
+    Matrix.SetLineOfMatrix(line);
+    Matrix.SetColumnOfMatrix(column);
+    Matrix.AllocMatrix();
+
+    for (int it = 0; it < line; ++it)
+        for (int jit = 0; jit < column; ++jit)
+            File >> Matrix.GetMatrix()[it][jit];
+
+    return Matrix;
+}
+
+template <class Type> void IOSystemMatrix<Type>::PutsMatrixInStdFileOut(std::ofstream &File, MatrixType<Type> Matrix) {
+
+    for (int it = 0; it < Matrix.GetLineOfMatrix(); ++it) {
+        for (int jit = 0; jit < Matrix.GetColumnOfMatrix(); ++jit)
+            File << Matrix.GetMatrix()[it][jit] << " ";
+
+        File << '\n';
+    }
+}
+
 template<class Type> MatrixType<Type> IOSystemMatrix<Type>::ReadMatrix(unsigned int line, unsigned  int column) {
 
     assert(this->LineAndLengthArePositive(line, column));
@@ -98,8 +141,24 @@ template<class Type> MatrixType<Type> IOSystemMatrix<Type>::ReadMatrix(unsigned 
     return Result;
 }
 
+
 template<class Type> MatrixType<Type> IOSystemMatrix<Type>::ReadMatrixFromFileWithGivenLength(const char * fileName) {
 
+    std::ifstream WorkingFile(fileName, std::ios::in);
+
+    this->CheckIfInputFileIsOpen(WorkingFile);
+    this->CheckIfInputFileIsEmpty(WorkingFile);
+
+    int line = this->ReadFirstElementFromFile(WorkingFile);
+    int column = this->ReadFirstElementFromFile(WorkingFile);
+
+    assert(this->LineAndLengthArePositive(line, column) >= 0);
+
+    MatrixType<Type> Matrix = GetMatrixWithGivenLengthFromStdFileIn(WorkingFile, line, column);
+
+    WorkingFile.close();
+
+    return Matrix;
 }
 
 template<class Type> MatrixType<Type> IOSystemMatrix<Type>::ReadMatrixFromFile(const char * fileName) {
@@ -126,6 +185,17 @@ template<class Type> void IOSystemMatrix<Type>::OutputMatrixWithLength(MatrixTyp
 
 template<class Type> void IOSystemMatrix<Type>::OutputMatrixInFileWithLength(MatrixType<Type> Matrix, const char * fileName) {
 
+    assert(this->LineAndLengthArePositive(Matrix.GetLineOfMatrix(), Matrix.GetColumnOfMatrix()));
+
+    std::ofstream WorkingFile(fileName, std::ios::out);
+
+    this->CheckIfOutputFileIsOpen(WorkingFile);
+
+    WorkingFile << Matrix.GetLineOfMatrix() << " " << Matrix.GetColumnOfMatrix() << '\n';
+
+    this->PutsMatrixInStdFileOut(WorkingFile, Matrix);
+
+    WorkingFile.close();
 }
 
 template<class Type> void IOSystemMatrix<Type>::OutputMatrixInFile(MatrixType<Type> Matrix, const char * fileName) {

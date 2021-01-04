@@ -83,6 +83,15 @@ public:
         this->IOSys->OutputMatrixWithLength(Matrix);
     }
 
+    void Test_ReadAndOutputMatrixWithGivenLength_() {
+
+        MatrixType<Type> Matrix;
+
+        Matrix = this->IOSys->ReadMatrixFromFileWithGivenLength(STDIN_FILE_WITH_LENGTH);
+
+        this->IOSys->OutputMatrixInFileWithLength(Matrix, STDOUT_FILE_WITH_LENGTH);
+    }
+
     ~TestsIOSystemMatrixObject() = default;
 };
 

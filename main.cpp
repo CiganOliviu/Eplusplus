@@ -28,7 +28,8 @@ void RunIOTests() {
 
     TestsIOSystemMatrixObject<int> MatrixIOSys;
 
-    MatrixIOSys.Test_ReadAndOutputMatrixInConsole_();
+    // MatrixIOSys.Test_ReadAndOutputMatrixInConsole_();
+    MatrixIOSys.Test_ReadAndOutputMatrixWithGivenLength_();
 }
 
 void RunOneDimensionalArrayWorkFlowTests() {
