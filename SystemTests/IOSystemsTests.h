@@ -92,6 +92,15 @@ public:
         this->IOSys->OutputMatrixInFileWithLength(Matrix, STDOUT_FILE_WITH_LENGTH);
     }
 
+    void Test_ReadAndOutputMatrixWithGivenLengthFromFile_() {
+
+        MatrixType<Type> Matrix;
+
+        Matrix = this->IOSys->ReadMatrixFromFile(STDIN_FILE_WITHOUT_LENGTH);
+
+        this->IOSys->OutputMatrixInFile(Matrix, STDOUT_FILE_WITHOUT_LENGTH);
+    }
+
     ~TestsIOSystemMatrixObject() = default;
 };
 

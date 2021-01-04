@@ -20,16 +20,17 @@ void RunObjectsTests() {
 void RunIOTests() {
 
     TestsIOSystemsOneDimensionalArrayObject<int> ArrayIOSys;
-    /*
+
     ArrayIOSys.Test_ReadAndOutputOneDimensionalArrayInConsole_();
     ArrayIOSys.Test_ReadAndOutputOneDimensionalArrayWithGivenLength_();
     ArrayIOSys.Test_ReadAndOutputOneDimensionalArrayFromFile_();
-    */
+
 
     TestsIOSystemMatrixObject<int> MatrixIOSys;
 
-    // MatrixIOSys.Test_ReadAndOutputMatrixInConsole_();
+    MatrixIOSys.Test_ReadAndOutputMatrixInConsole_();
     MatrixIOSys.Test_ReadAndOutputMatrixWithGivenLength_();
+    MatrixIOSys.Test_ReadAndOutputMatrixWithGivenLengthFromFile_();
 }
 
 void RunOneDimensionalArrayWorkFlowTests() {
@@ -92,7 +93,7 @@ int main() {
 
     RunObjectsTests();
     // This suit of tests require console input, run it AFTER YOU READ THE CODE FROM IT! Delete this comment if out of date.
-    RunIOTests();
+    // RunIOTests();
     RunOneDimensionalArrayWorkFlowTests();
     RunOneDimensionalArraySortingWorkFlowTests();
     RunFundamentalAlgorithmsTests();

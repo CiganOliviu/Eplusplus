@@ -18,7 +18,8 @@ public:
 
     [[maybe_unused]] virtual Type ** GetMatrix() {}
     [[maybe_unused]] virtual void SetMatrix(Type Array[][STANDARD_LENGTH]) {}
-    [[ maybe_unused ]] virtual void AllocMatrix() {}
+    [[ maybe_unused ]] virtual void AllocMatrixAfterLine() {}
+    [[ maybe_unused ]] virtual void AllocMatrix(int memorySize) {}
 
     ~AbstractMatrixTypeObject() = default;
 };
@@ -44,7 +45,9 @@ public:
     Type ** GetMatrix() override;
     void SetMatrix(Type Array[][STANDARD_LENGTH]) override;
 
-    void AllocMatrix() override;
+    void AllocMatrixAfterLine() override;
+    void AllocMatrix(int memorySize) override;
+
 
     ~MatrixType() = default;
 };
@@ -79,12 +82,18 @@ template<class Type> void MatrixType<Type>::SetMatrix(Type Array[][STANDARD_LENG
     for (int iterator = 0; iterator < this->_line; ++iterator)
         this->Matrix[iterator] = Array[iterator];
 }
-template <class Type> void MatrixType<Type>::AllocMatrix() {
+template <class Type> void MatrixType<Type>::AllocMatrixAfterLine() {
 
     assert(this->_line >= 0 && this->_column >= 0);
 
     for (int iterator = 0; iterator < this->_line; ++iterator)
         this->Matrix[iterator] = (Type *) malloc(this->_line * sizeof(Type));
+}
+
+template<class Type> void MatrixType<Type>::AllocMatrix(int memorySize) {
+
+    for (int iterator = 0; iterator < this->_line; ++iterator)
+        this->Matrix[iterator] = (Type *) malloc(memorySize * sizeof(Type));
 }
 
 template <class Type> class MatrixTypeFactoryObject {
