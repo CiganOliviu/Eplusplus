@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Eplusplus.dir/main.cpp.o  -o Eplusplus 

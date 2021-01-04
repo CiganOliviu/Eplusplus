@@ -1,3 +1,0 @@
-/media/cigan/Personal/Projects/Eplusplus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/media/cigan/Personal/Projects/Eplusplus/cmake-build-debug/CMakeFiles/edit_cache.dir
-/media/cigan/Personal/Projects/Eplusplus/cmake-build-debug/CMakeFiles/Eplusplus.dir

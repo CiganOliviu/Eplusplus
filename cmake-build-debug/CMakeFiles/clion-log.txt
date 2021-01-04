@@ -1,4 +1,0 @@
-/home/cigan/Documents/clion-2020.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /media/cigan/Personal/Projects/Eplusplus
--- Configuring done
--- Generating done
--- Build files have been written to: /media/cigan/Personal/Projects/Eplusplus/cmake-build-debug
